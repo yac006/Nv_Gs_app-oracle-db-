@@ -1,0 +1,362 @@
+﻿object Achats: TAchats
+  Left = 0
+  Top = 0
+  Caption = 'Achats'
+  ClientHeight = 517
+  ClientWidth = 579
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 496
+    Top = 166
+    Width = 54
+    Height = 19
+    Caption = 'Total :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 422
+    Top = 270
+    Width = 36
+    Height = 13
+    Caption = 'Ann'#233'es'
+  end
+  object Label6: TLabel
+    Left = 368
+    Top = 24
+    Width = 51
+    Height = 13
+    Caption = 'Fourniseur'
+    FocusControl = DBEdit5
+  end
+  object Label7: TLabel
+    Left = 368
+    Top = 64
+    Width = 58
+    Height = 13
+    Caption = 'Qte acheter'
+    FocusControl = DBEdit6
+  end
+  object Label8: TLabel
+    Left = 368
+    Top = 104
+    Width = 72
+    Height = 13
+    Caption = 'Date d acheter'
+    FocusControl = DBEdit7
+  end
+  object Label9: TLabel
+    Left = 368
+    Top = 144
+    Width = 56
+    Height = 13
+    Caption = 'Prix d'#39'achat'
+    FocusControl = DBEdit8
+  end
+  object Label10: TLabel
+    Left = 368
+    Top = 184
+    Width = 64
+    Height = 13
+    Caption = 'Prix de vente'
+    FocusControl = DBEdit9
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 8
+    Width = 49
+    Height = 25
+    Caption = 'Retour'
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 49
+    Width = 81
+    Height = 61
+    Caption = 'Ajouter article'
+    TabOrder = 1
+  end
+  object Button4: TButton
+    Left = 496
+    Top = 32
+    Width = 75
+    Height = 25
+    Caption = 'Button4'
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 496
+    Top = 80
+    Width = 75
+    Height = 25
+    Caption = 'Button3'
+    TabOrder = 3
+  end
+  object DBGrid1: TDBGrid
+    Left = 251
+    Top = 464
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Socit'#233
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Model'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Ann'#233'es'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Fourniseur'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Qte acheter'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Date d acheter'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Prix d'#39'achat'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Prix de vente'
+        Visible = True
+      end>
+  end
+  object DBEdit5: TDBEdit
+    Left = 368
+    Top = 40
+    Width = 100
+    Height = 21
+    DataField = 'Fourniseur'
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object DBEdit6: TDBEdit
+    Left = 368
+    Top = 80
+    Width = 100
+    Height = 21
+    DataField = 'Qte acheter'
+    DataSource = DataSource1
+    TabOrder = 6
+  end
+  object DBEdit7: TDBEdit
+    Left = 368
+    Top = 120
+    Width = 100
+    Height = 21
+    DataField = 'Date d acheter'
+    DataSource = DataSource1
+    TabOrder = 7
+  end
+  object DBEdit8: TDBEdit
+    Left = 368
+    Top = 160
+    Width = 100
+    Height = 21
+    DataField = 'Prix d'#39'achat'
+    DataSource = DataSource1
+    TabOrder = 8
+  end
+  object DBEdit9: TDBEdit
+    Left = 368
+    Top = 200
+    Width = 100
+    Height = 21
+    DataField = 'Prix de vente'
+    DataSource = DataSource1
+    TabOrder = 9
+  end
+  object GroupBox1: TGroupBox
+    Left = 112
+    Top = 8
+    Width = 177
+    Height = 49
+    Caption = 'Socit'#233
+    TabOrder = 10
+    object DBEdit2: TDBEdit
+      Left = 11
+      Top = 20
+      Width = 157
+      Height = 21
+      DataField = 'Socit'#233
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 112
+    Top = 63
+    Width = 177
+    Height = 50
+    Caption = 'Model'
+    TabOrder = 11
+    object DBEdit3: TDBEdit
+      Left = 11
+      Top = 21
+      Width = 155
+      Height = 20
+      DataField = 'Model'
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 112
+    Top = 119
+    Width = 177
+    Height = 47
+    Caption = 'Ann'#233'e'
+    TabOrder = 12
+  end
+  object GroupBox3: TGroupBox
+    Left = 17
+    Top = 188
+    Width = 144
+    Height = 41
+    Caption = 'Fourniseur'
+    TabOrder = 13
+  end
+  object GroupBox4: TGroupBox
+    Left = 17
+    Top = 235
+    Width = 145
+    Height = 45
+    Caption = 'Qte acheter'
+    TabOrder = 14
+  end
+  object GroupBox5: TGroupBox
+    Left = 32
+    Top = 316
+    Width = 130
+    Height = 41
+    Caption = 'Date d'#39'acheter'
+    TabOrder = 15
+  end
+  object GroupBox6: TGroupBox
+    Left = 33
+    Top = 369
+    Width = 129
+    Height = 39
+    Caption = 'Prix d'#39'achat'
+    TabOrder = 16
+  end
+  object GroupBox7: TGroupBox
+    Left = 57
+    Top = 414
+    Width = 161
+    Height = 42
+    Caption = 'Prix de vente'
+    TabOrder = 17
+  end
+  object DBEdit4: TDBEdit
+    Left = 125
+    Top = 136
+    Width = 155
+    Height = 21
+    DataField = 'Ann'#233'es'
+    DataSource = DataSource1
+    TabOrder = 18
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\yacine\Des' +
+      'ktop\App G.Stocks\Database1.mdb;Persist Security Info=False'
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 136
+    Top = 488
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Achats'
+    Left = 48
+    Top = 488
+    object ADOTable1ID: TAutoIncField
+      FieldName = 'ID'
+      ReadOnly = True
+    end
+    object ADOTable1Socité: TWideStringField
+      FieldName = 'Socit'#233
+      Size = 255
+    end
+    object ADOTable1Model: TWideStringField
+      FieldName = 'Model'
+      Size = 255
+    end
+    object ADOTable1Années: TWideStringField
+      FieldName = 'Ann'#233'es'
+      Size = 255
+    end
+    object ADOTable1Fourniseur: TWideStringField
+      FieldName = 'Fourniseur'
+      Size = 255
+    end
+    object ADOTable1Qteacheter: TWideStringField
+      FieldName = 'Qte acheter'
+      Size = 255
+    end
+    object ADOTable1Datedacheter: TWideStringField
+      FieldName = 'Date d acheter'
+      Size = 255
+    end
+    object ADOTable1Prixdachat: TWideStringField
+      FieldName = 'Prix d'#39'achat'
+      Size = 255
+    end
+    object ADOTable1Prixdevente: TWideStringField
+      FieldName = 'Prix de vente'
+      Size = 255
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 88
+    Top = 488
+  end
+end

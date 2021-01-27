@@ -1,0 +1,16 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  Unit1 in 'Unit1.pas' {Principale},
+  Unit2 in 'Unit2.pas' {Article};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TPrincipale, Principale);
+  Application.CreateForm(TArticle, Article);
+  Application.Run;
+end.

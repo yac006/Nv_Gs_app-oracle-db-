@@ -1,0 +1,65 @@
+unit Unit4;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Data.Win.ADODB;
+
+type
+  TAchats = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button4: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    ADOTable1ID: TAutoIncField;
+    ADOTable1Socité: TWideStringField;
+    ADOTable1Model: TWideStringField;
+    ADOTable1Années: TWideStringField;
+    ADOTable1Fourniseur: TWideStringField;
+    ADOTable1Qteacheter: TWideStringField;
+    ADOTable1Datedacheter: TWideStringField;
+    ADOTable1Prixdachat: TWideStringField;
+    ADOTable1Prixdevente: TWideStringField;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBEdit5: TDBEdit;
+    Label7: TLabel;
+    DBEdit6: TDBEdit;
+    Label8: TLabel;
+    DBEdit7: TDBEdit;
+    Label9: TLabel;
+    DBEdit8: TDBEdit;
+    Label10: TLabel;
+    DBEdit9: TDBEdit;
+    GroupBox1: TGroupBox;
+    DBEdit2: TDBEdit;
+    GroupBox2: TGroupBox;
+    RadioGroup1: TRadioGroup;
+    GroupBox3: TGroupBox;
+    GroupBox4: TGroupBox;
+    GroupBox5: TGroupBox;
+    GroupBox6: TGroupBox;
+    GroupBox7: TGroupBox;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Achats: TAchats;
+
+implementation
+
+{$R *.dfm}
+
+end.
