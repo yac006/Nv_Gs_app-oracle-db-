@@ -23,6 +23,8 @@ type
     ADOConnection1: TADOConnection;
     ADOTable1: TADOTable;
     DataSource1: TDataSource;
+    Button4: TButton;
+    procedure Button4Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -37,5 +39,11 @@ implementation
 {$R *.dfm}
 
 uses Unit1, Unit3, Unit4, Unit5;
+
+procedure TArticle.Button4Click(Sender: TObject);
+begin
+ Article.Hide;
+ Principale.Show;
+end;
 
 end.

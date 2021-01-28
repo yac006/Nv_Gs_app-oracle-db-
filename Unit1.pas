@@ -31,6 +31,9 @@ type
     procedure Panel3MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
     procedure Panel3MouseLeave(Sender: TObject);
+    procedure Panel4Click(Sender: TObject);
+    procedure Panel5Click(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -44,7 +47,13 @@ implementation
 
 {$R *.dfm}
 
-uses Unit2, Unit3, Unit5, Unit4;
+uses Unit2, Unit3, Unit5, Unit4, Unit6;
+
+procedure TPrincipale.Panel1Click(Sender: TObject);
+begin
+ stock.show;
+ Principale.Hide;
+end;
 
 procedure TPrincipale.Panel1MouseLeave(Sender: TObject);
 begin
@@ -63,8 +72,8 @@ end;
 
 procedure TPrincipale.Panel2Click(Sender: TObject);
 begin
-  { Article.Show;
-   Principale.Hide; }
+  Article.Show;
+  Principale.Hide;
 end;
 
 procedure TPrincipale.Panel2MouseLeave(Sender: TObject);
@@ -103,6 +112,12 @@ begin
   Panel3.Color:=clSilver;
 end;
 
+procedure TPrincipale.Panel4Click(Sender: TObject);
+begin
+ Achats.Show;
+ Principale.Hide;
+end;
+
 procedure TPrincipale.Panel4MouseLeave(Sender: TObject);
 begin
   Panel4.Top:=148;
@@ -116,6 +131,12 @@ begin
   Panel4.Top:=150;
   Panel4.Left:=234;
   Panel4.Color:=clSilver;
+end;
+
+procedure TPrincipale.Panel5Click(Sender: TObject);
+begin
+ Ventes.Show;
+ Principale.Hide;
 end;
 
 procedure TPrincipale.Panel5MouseLeave(Sender: TObject);

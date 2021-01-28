@@ -16,7 +16,7 @@ object Principale: TPrincipale
   object Label1: TLabel
     Left = 176
     Top = 24
-    Width = 257
+    Width = 250
     Height = 74
     Caption = 'Gestion-stock'
     Font.Charset = ANSI_CHARSET
@@ -40,6 +40,7 @@ object Principale: TPrincipale
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    OnClick = Panel1Click
     OnMouseLeave = Panel1MouseLeave
     OnMouseMove = Panel1MouseMove
   end
@@ -93,6 +94,7 @@ object Principale: TPrincipale
     ParentBackground = False
     ParentFont = False
     TabOrder = 3
+    OnClick = Panel4Click
     OnMouseLeave = Panel4MouseLeave
     OnMouseMove = Panel4MouseMove
   end
@@ -111,6 +113,7 @@ object Principale: TPrincipale
     ParentBackground = False
     ParentFont = False
     TabOrder = 4
+    OnClick = Panel5Click
     OnMouseLeave = Panel5MouseLeave
     OnMouseMove = Panel5MouseMoe
   end

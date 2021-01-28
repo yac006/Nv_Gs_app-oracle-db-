@@ -42,6 +42,8 @@ type
     Button3: TButton;
     Button2: TButton;
     Button1: TButton;
+    Button4: TButton;
+    procedure Button4Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -56,5 +58,11 @@ implementation
 {$R *.dfm}
 
 uses Unit1, Unit2, Unit4, Unit5;
+
+procedure TClient_fourniseur.Button4Click(Sender: TObject);
+begin
+  Client_fourniseur.Hide;
+  Principale.Show;
+end;
 
 end.

@@ -100,7 +100,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit5.pas">
-            <Form>Form5</Form>
+            <Form>Ventes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit6.pas">
+            <Form>Stock</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

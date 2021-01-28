@@ -4,7 +4,7 @@
   Caption = 'Client_fourniseur'
   ClientHeight = 552
   ClientWidth = 781
-  Color = clTeal
+  Color = 49087
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -172,6 +172,15 @@
         Caption = 'Ajouter'
         TabOrder = 2
       end
+    end
+    object Button4: TButton
+      Left = 665
+      Top = 19
+      Width = 75
+      Height = 25
+      Caption = 'Retour'
+      TabOrder = 7
+      OnClick = Button4Click
     end
   end
   object GroupBox2: TGroupBox

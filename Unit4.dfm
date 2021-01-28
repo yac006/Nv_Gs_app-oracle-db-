@@ -20,6 +20,7 @@
     Height = 25
     Caption = 'Retour'
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 281

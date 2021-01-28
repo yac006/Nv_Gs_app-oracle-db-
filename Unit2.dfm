@@ -2,9 +2,9 @@ object Article: TArticle
   Left = 0
   Top = 0
   Caption = 'Article'
-  ClientHeight = 539
+  ClientHeight = 543
   ClientWidth = 577
-  Color = clTeal
+  Color = 20123
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -19,6 +19,9 @@ object Article: TArticle
     Width = 529
     Height = 145
     Caption = 'GroupBox1'
+    Color = 57825
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 0
     object Edit1: TEdit
       Left = 24
@@ -84,6 +87,15 @@ object Article: TArticle
       Caption = 'Supprimer'
       TabOrder = 7
     end
+    object Button4: TButton
+      Left = 447
+      Top = 34
+      Width = 75
+      Height = 25
+      Caption = 'Retour'
+      TabOrder = 8
+      OnClick = Button4Click
+    end
   end
   object GroupBox2: TGroupBox
     Left = 16
@@ -91,6 +103,9 @@ object Article: TArticle
     Width = 529
     Height = 283
     Caption = 'GroupBox2'
+    Color = 57825
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 16

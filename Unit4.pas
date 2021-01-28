@@ -44,6 +44,7 @@ type
     GroupBox7: TGroupBox;
     DBEdit9: TDBEdit;
     Edit1: TEdit;
+    procedure Button1Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -58,5 +59,11 @@ implementation
 {$R *.dfm}
 
 uses Unit1, Unit2, Unit3, Unit5;
+
+procedure TAchats.Button1Click(Sender: TObject);
+begin
+ Achats.Hide;
+ Principale.Show;
+end;
 
 end.
