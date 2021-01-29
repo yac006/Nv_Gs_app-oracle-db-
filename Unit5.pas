@@ -39,9 +39,10 @@ type
     GroupBox7: TGroupBox;
     Button2: TButton;
     Button1: TButton;
-    Button3: TButton;
     GroupBox8: TGroupBox;
     DBGrid1: TDBGrid;
+    GroupBox9: TGroupBox;
+    Button3: TButton;
     procedure Button3Click(Sender: TObject);
   private
     { Déclarations privées }

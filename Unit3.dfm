@@ -4,13 +4,14 @@
   Caption = 'Client_fourniseur'
   ClientHeight = 552
   ClientWidth = 781
-  Color = 49087
+  Color = 6579200
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -18,38 +19,40 @@
     Top = 8
     Width = 761
     Height = 161
-    Caption = 'inputs panel'
+    Color = 6579200
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 0
     object Label2: TLabel
-      Left = 37
+      Left = 29
       Top = 24
-      Width = 21
+      Width = 28
       Height = 13
-      Caption = 'Nom'
+      Caption = 'Nom :'
       FocusControl = DBEdit2
     end
     object Label3: TLabel
-      Left = 22
+      Left = 14
       Top = 51
-      Width = 36
+      Width = 43
       Height = 13
-      Caption = 'Pr'#233'nom'
+      Caption = 'Pr'#233'nom :'
       FocusControl = DBEdit3
     end
     object Label4: TLabel
-      Left = 238
+      Left = 230
       Top = 24
-      Width = 38
+      Width = 48
       Height = 13
-      Caption = 'address'
+      Caption = 'address : '
       FocusControl = DBEdit4
     end
     object Label5: TLabel
       Left = 446
       Top = 24
-      Width = 20
+      Width = 27
       Height = 13
-      Caption = 'T'#233'l'#233
+      Caption = 'T'#233'l'#233' :'
       FocusControl = DBEdit5
     end
     object Label6: TLabel
@@ -88,7 +91,7 @@
       TabOrder = 2
     end
     object DBEdit5: TDBEdit
-      Left = 472
+      Left = 480
       Top = 21
       Width = 150
       Height = 21
@@ -189,6 +192,9 @@
     Width = 373
     Height = 265
     Caption = 'Liste des clients'
+    Color = 6579200
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 16
@@ -247,11 +253,14 @@
     Width = 369
     Height = 265
     Caption = 'Liste des fourniseur'
+    Color = 6579200
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ParentBackground = False
+    ParentColor = False
     ParentFont = False
     TabOrder = 2
     object DBGrid2: TDBGrid
@@ -313,14 +322,15 @@
   object ADOConnection1: TADOConnection
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Ap' +
-      'p G.Stocks\Database1.mdb;Mode=Share Deny None;Persist Security I' +
-      'nfo=False;Jet OLEDB:System database="";Jet OLEDB:Registry Path="' +
-      '";Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=5;Jet OLE' +
-      'DB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;J' +
-      'et OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Passw' +
-      'ord="";Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt ' +
-      'Database=False;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet ' +
-      'OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False'
+      'p G.Stocks\Delphi-project\Database1.mdb;Mode=Share Deny None;Per' +
+      'sist Security Info=False;Jet OLEDB:System database="";Jet OLEDB:' +
+      'Registry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine' +
+      ' Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Parti' +
+      'al Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New' +
+      ' Database Password="";Jet OLEDB:Create System Database=False;Jet' +
+      ' OLEDB:Encrypt Database=False;Jet OLEDB:Don'#39't Copy Locale on Com' +
+      'pact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OL' +
+      'EDB:SFP=False'
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 48
     Top = 488

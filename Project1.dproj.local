@@ -5,13 +5,14 @@
     <Transaction>2021/01/25 14:22:01.000.546,=C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Unit2.pas</Transaction>
     <Transaction>2021/01/25 14:50:03.000.467,C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Unit1.pas=C:\Users\yacine\Desktop\App G.Stocks\Unit1.pas</Transaction>
     <Transaction>2021/01/25 14:50:03.000.467,C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\yacine\Desktop\App G.Stocks\Unit1.dfm</Transaction>
-    <Transaction>2021/01/25 14:50:07.000.527,C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Unit2.dfm=C:\Users\yacine\Desktop\App G.Stocks\Unit2.dfm</Transaction>
     <Transaction>2021/01/25 14:50:07.000.527,C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Unit2.pas=C:\Users\yacine\Desktop\App G.Stocks\Unit2.pas</Transaction>
+    <Transaction>2021/01/25 14:50:07.000.527,C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Unit2.dfm=C:\Users\yacine\Desktop\App G.Stocks\Unit2.dfm</Transaction>
     <Transaction>2021/01/25 14:50:12.000.487,C:\Users\yacine\Documents\Embarcadero\Studio\Projets\Project1.dproj=C:\Users\yacine\Desktop\App G.Stocks\Project1.dproj</Transaction>
     <Transaction>2021/01/25 14:57:41.000.095,=C:\Users\yacine\Desktop\App G.Stocks\Unit3.pas</Transaction>
     <Transaction>2021/01/25 16:35:00.000.120,=C:\Users\yacine\Desktop\App G.Stocks\Unit4.pas</Transaction>
     <Transaction>2021/01/25 20:15:27.000.340,=C:\Users\yacine\Desktop\App G.Stocks\Unit5.pas</Transaction>
-    <Transaction>2021/01/28 09:30:43.317,=C:\work__space_gs\Delphi-project\Unit6.pas</Transaction>
+    <Transaction>2021/01/28 09:30:43.000.317,=C:\work__space_gs\Delphi-project\Unit6.pas</Transaction>
+    <Transaction>2021/01/28 20:35:35.000.133,=C:\App G.Stocks\Delphi-project\Unit7.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Unit1.pas"/>
@@ -26,5 +27,7 @@
     <File Path="Unit5.dfm"/>
     <File Path="Unit6.pas"/>
     <File Path="Unit6.dfm"/>
+    <File Path="Unit7.pas"/>
+    <File Path="Unit7.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

@@ -9,13 +9,9 @@ uses
 
 type
   TAchats = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button4: TButton;
     ADOConnection1: TADOConnection;
     ADOTable1: TADOTable;
     DataSource1: TDataSource;
-    DBGrid1: TDBGrid;
     ADOTable1ID: TAutoIncField;
     ADOTable1Socité: TWideStringField;
     ADOTable1Model: TWideStringField;
@@ -25,18 +21,6 @@ type
     ADOTable1Datedacheter: TWideStringField;
     ADOTable1Prixdachat: TWideStringField;
     ADOTable1Prixdevente: TWideStringField;
-    GroupBox1: TGroupBox;
-    DBEdit2: TDBEdit;
-    GroupBox2: TGroupBox;
-    RadioGroup1: TRadioGroup;
-    GroupBox3: TGroupBox;
-    GroupBox4: TGroupBox;
-    GroupBox5: TGroupBox;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
-    DBEdit7: TDBEdit;
-    DBEdit6: TDBEdit;
     GroupBox8: TGroupBox;
     Button3: TButton;
     GroupBox6: TGroupBox;
@@ -44,6 +28,25 @@ type
     GroupBox7: TGroupBox;
     DBEdit9: TDBEdit;
     Edit1: TEdit;
+    GroupBox10: TGroupBox;
+    GroupBox1: TGroupBox;
+    DBEdit2: TDBEdit;
+    GroupBox2: TGroupBox;
+    DBEdit3: TDBEdit;
+    RadioGroup1: TRadioGroup;
+    GroupBox3: TGroupBox;
+    DBEdit5: TDBEdit;
+    GroupBox4: TGroupBox;
+    DBEdit6: TDBEdit;
+    GroupBox5: TGroupBox;
+    DBEdit7: TDBEdit;
+    DBEdit4: TDBEdit;
+    GroupBox9: TGroupBox;
+    Button2: TButton;
+    Button4: TButton;
+    Button1: TButton;
+    GroupBox11: TGroupBox;
+    DBGrid1: TDBGrid;
     procedure Button1Click(Sender: TObject);
   private
     { Déclarations privées }
