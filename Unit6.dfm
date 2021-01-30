@@ -1234,5 +1234,6 @@ object Stock: TStock
     Height = 57
     Caption = 'Articles / Stock'
     TabOrder = 3
+    OnClick = Panel4Click
   end
 end

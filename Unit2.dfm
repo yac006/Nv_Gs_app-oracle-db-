@@ -227,19 +227,17 @@ object Article: TArticle
     TabOrder = 2
   end
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Ap' +
-      'p G.Stocks\Delphi-project\Database1.mdb;Mode=Share Deny None;Per' +
-      'sist Security Info=False;Jet OLEDB:System database="";Jet OLEDB:' +
-      'Registry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine' +
-      ' Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Parti' +
-      'al Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New' +
-      ' Database Password="";Jet OLEDB:Create System Database=False;Jet' +
-      ' OLEDB:Encrypt Database=False;Jet OLEDB:Don'#39't Copy Locale on Com' +
-      'pact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OL' +
-      'EDB:SFP=False'
-    Mode = cmShareDenyNone
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\ap' +
+      'p\Delphi-project\Database1.mdb;Mode=Share Deny None;Persist Secu' +
+      'rity Info=False;Jet OLEDB:System database="";Jet OLEDB:Registry ' +
+      'Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=5;J' +
+      'et OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk O' +
+      'ps=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database' +
+      ' Password="";Jet OLEDB:Create System Database=False;Jet OLEDB:En' +
+      'crypt Database=False;Jet OLEDB:Don'#39't Copy Locale on Compact=Fals' +
+      'e;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=F' +
+      'alse'
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 416
     Top = 440
