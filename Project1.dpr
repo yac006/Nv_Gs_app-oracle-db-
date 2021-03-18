@@ -9,7 +9,8 @@ uses
   Unit5 in 'Unit5.pas' {Ventes},
   Unit6 in 'Unit6.pas' {Stock},
   Unit7 in 'Unit7.pas' {Journal_achats},
-  Unit8 in 'Unit8.pas' {articles_achats};
+  Unit8 in 'Unit8.pas' {Articles_en_stock},
+  Unit9 in 'Unit9.pas' {Journal_ventes};
 
 {$R *.res}
 
@@ -23,6 +24,7 @@ begin
   Application.CreateForm(TVentes, Ventes);
   Application.CreateForm(TStock, Stock);
   Application.CreateForm(TJournal_achats, Journal_achats);
-  Application.CreateForm(Tarticles_achats, articles_achats);
+  Application.CreateForm(TArticles_en_stock, Articles_en_stock);
+  Application.CreateForm(TJournal_ventes, Journal_ventes);
   Application.Run;
 end.

@@ -18,6 +18,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Panel2Click(Sender: TObject);
     procedure Panel4Click(Sender: TObject);
+    procedure Panel3Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -31,7 +32,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit7, Unit8;
+uses Unit1, Unit7, Unit8, Unit9;
 
 procedure TStock.Button1Click(Sender: TObject);
 begin
@@ -45,10 +46,16 @@ Journal_achats.Show;
 Stock.Hide;
 end;
 
+procedure TStock.Panel3Click(Sender: TObject);
+begin
+    Journal_ventes.Show;
+    Stock.Hide;
+end;
+
 procedure TStock.Panel4Click(Sender: TObject);
 begin
 Stock.Hide;
-articles_achats.Show;
+Articles_en_stock.Show;
 end;
 
 end.

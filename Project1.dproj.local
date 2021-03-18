@@ -13,7 +13,7 @@
     <Transaction>2021/01/25 20:15:27.000.340,=C:\Users\yacine\Desktop\App G.Stocks\Unit5.pas</Transaction>
     <Transaction>2021/01/28 09:30:43.000.317,=C:\work__space_gs\Delphi-project\Unit6.pas</Transaction>
     <Transaction>2021/01/28 20:35:35.000.133,=C:\App G.Stocks\Delphi-project\Unit7.pas</Transaction>
-    <Transaction>2021/01/30 13:55:00.916,=C:\app\Delphi-project\Unit8.pas</Transaction>
+    <Transaction>2021/01/30 13:55:00.000.916,=C:\app\Delphi-project\Unit8.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Unit1.pas"/>
@@ -32,5 +32,7 @@
     <File Path="Unit7.dfm"/>
     <File Path="Unit8.pas"/>
     <File Path="Unit8.dfm"/>
+    <File Path="Unit9.pas"/>
+    <File Path="Unit9.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

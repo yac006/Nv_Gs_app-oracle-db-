@@ -4,21 +4,45 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.XPMan,
+  Vcl.Imaging.pngimage, Vcl.ImgList, Vcl.ComCtrls, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.DBCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.Buttons, FireDAC.UI.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef,
+  Data.Win.ADODB;
 
 type
   TPrincipale = class(TForm)
-    Panel1: TPanel;
-    Panel2: TPanel;
-    Panel3: TPanel;
-    Panel4: TPanel;
-    Panel5: TPanel;
-    GroupBox1: TGroupBox;
-    Label1: TLabel;
     Button1: TButton;
     Panel6: TPanel;
-    Memo1: TMemo;
     Button2: TButton;
+    Panel3: TPanel;
+    Panel5: TPanel;
+    Panel4: TPanel;
+    Panel2: TPanel;
+    Panel1: TPanel;
+    Button3: TButton;
+    Panel7: TPanel;
+    RadioGroup1: TRadioGroup;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    GroupBox1: TGroupBox;
+    Panel8_logo: TPanel;
+    Label1: TLabel;
+    Image1: TImage;
+    Button4: TButton;
+    ImageList1: TImageList;
+    ADOTable1: TADOTable;
+    ADOConnection1: TADOConnection;
+    DataSource1: TDataSource;
+    GroupBox3: TGroupBox;
+    GroupBox2: TGroupBox;
+    Edit1: TEdit;
+    BitBtn1: TBitBtn;
+    DBGrid1: TDBGrid;
     procedure Panel2Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
     procedure Panel5MouseMoe(Sender: TObject; Shift: TShiftState; X,
@@ -41,6 +65,12 @@ type
     procedure Panel1Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure RadioButton1Click(Sender: TObject);
+    procedure RadioButton2Click(Sender: TObject);
+    procedure RadioButton3Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -59,13 +89,35 @@ uses Unit2, Unit3, Unit5, Unit4, Unit6;
 procedure TPrincipale.Button1Click(Sender: TObject);
 begin
  Panel6.Visible:=true;
- Principale.Width:=783;
+ Principale.Width:=826;
 end;
 
 procedure TPrincipale.Button2Click(Sender: TObject);
 begin
   Panel6.Visible:=False;
-  Principale.Width:=622;
+  Principale.Width:=623;
+end;
+
+procedure TPrincipale.Button3Click(Sender: TObject);
+begin
+    Panel8_logo.Visible:= false;
+    Panel7.Visible:= true;
+end;
+
+procedure TPrincipale.Button4Click(Sender: TObject);
+begin
+      Panel8_logo.Visible:= true;
+      Panel7.Visible:= false;
+end;
+
+procedure TPrincipale.Edit1Change(Sender: TObject);
+begin
+    ADOTable1.Filtered:= False;
+    if Edit1.Text = '' then
+          Exit;
+    //ADOTable1.Filter:= 'Model LIKE '+'('+''''+quotedstr(edit1.Text+'*')+'%'+''''+')' ;
+    ADOTable1.Filter:= 'Model LIKE '+quotedstr(edit1.Text+'*');
+    ADOTable1.Filtered:= true;
 end;
 
 procedure TPrincipale.Panel1Click(Sender: TObject);
@@ -86,7 +138,7 @@ procedure TPrincipale.Panel1MouseMove(Sender: TObject; Shift: TShiftState; X,
 begin
   Panel1.Top:=213;
   Panel1.Left:=435;
-  Panel1.Color:=$000DBCFF;
+  Panel1.Color:=$00DBDBDB;
 end;
 
 procedure TPrincipale.Panel2Click(Sender: TObject);
@@ -107,7 +159,7 @@ procedure TPrincipale.Panel2MouseMove(Sender: TObject; Shift: TShiftState; X,
 begin
   Panel2.Top:=340;
   Panel2.Left:=292;
-  Panel2.Color:=clSilver;
+  Panel2.Color:=$00DBDBDB;
 end;
 
 procedure TPrincipale.Panel3Click(Sender: TObject);
@@ -128,7 +180,7 @@ procedure TPrincipale.Panel3MouseMove(Sender: TObject; Shift: TShiftState; X,
 begin
   Panel3.Top:=340;
   Panel3.Left:=60;
-  Panel3.Color:=clSilver;
+  Panel3.Color:=$00DBDBDB;
 end;
 
 procedure TPrincipale.Panel4Click(Sender: TObject);
@@ -149,7 +201,7 @@ procedure TPrincipale.Panel4MouseMove(Sender: TObject; Shift: TShiftState; X,
 begin
   Panel4.Top:=213;
   Panel4.Left:=234;
-  Panel4.Color:=clSilver;
+  Panel4.Color:=$00DBDBDB;
 end;
 
 procedure TPrincipale.Panel5Click(Sender: TObject);
@@ -170,7 +222,23 @@ procedure TPrincipale.Panel5MouseMoe(Sender: TObject; Shift: TShiftState; X,
 begin
   Panel5.Top:=213;
   Panel5.Left:=60;
-  Panel5.Color:=clSilver;
+  Panel5.Color:=$00DBDBDB;
+end;
+
+procedure TPrincipale.RadioButton1Click(Sender: TObject);
+begin
+    Principale.Color:= $00B79220;
+end;
+
+procedure TPrincipale.RadioButton2Click(Sender: TObject);
+begin
+    Principale.Color:= $000AB0FA ;
+
+end;
+
+procedure TPrincipale.RadioButton3Click(Sender: TObject);
+begin
+     Principale.Color:= $00E77C6D ;
 end;
 
 end.

@@ -4,7 +4,7 @@ object Stock: TStock
   Caption = 'Stock'
   ClientHeight = 521
   ClientWidth = 659
-  Color = clBtnFace
+  Color = 8415552
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -1216,6 +1216,8 @@ object Stock: TStock
     Width = 177
     Height = 57
     Caption = ' Journal d'#39'achats'
+    Color = 15658734
+    ParentBackground = False
     TabOrder = 1
     OnClick = Panel2Click
   end
@@ -1225,7 +1227,10 @@ object Stock: TStock
     Width = 177
     Height = 57
     Caption = 'Journal des ventes'
+    Color = 15658734
+    ParentBackground = False
     TabOrder = 2
+    OnClick = Panel3Click
   end
   object Panel4: TPanel
     Left = 256
@@ -1233,6 +1238,8 @@ object Stock: TStock
     Width = 360
     Height = 57
     Caption = 'Articles / Stock'
+    Color = 15658734
+    ParentBackground = False
     TabOrder = 3
     OnClick = Panel4Click
   end

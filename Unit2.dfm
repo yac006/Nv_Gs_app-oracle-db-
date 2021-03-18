@@ -4,7 +4,7 @@ object Article: TArticle
   Caption = 'Article'
   ClientHeight = 541
   ClientWidth = 763
-  Color = 900351
+  Color = 44784
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -23,137 +23,134 @@ object Article: TArticle
     ParentBackground = False
     ParentColor = False
     TabOrder = 0
+    object GroupBox4: TGroupBox
+      Left = 30
+      Top = 360
+      Width = 235
+      Height = 120
+      Caption = 'Controle'
+      Color = 44784
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 0
+      object Button2: TButton
+        Left = 27
+        Top = 70
+        Width = 81
+        Height = 25
+        Caption = 'Modify'
+        TabOrder = 0
+        OnClick = Button2Click
+      end
+      object Button1: TButton
+        Left = 120
+        Top = 33
+        Width = 80
+        Height = 25
+        Caption = 'Enregistrer'
+        TabOrder = 1
+        OnClick = Button1Click
+      end
+      object Button3: TButton
+        Left = 120
+        Top = 70
+        Width = 80
+        Height = 25
+        Caption = 'Supprimer'
+        TabOrder = 2
+        OnClick = Button3Click
+      end
+      object Button5: TButton
+        Left = 27
+        Top = 33
+        Width = 81
+        Height = 25
+        Caption = 'Ajouter'
+        TabOrder = 3
+        OnClick = Button5Click
+      end
+    end
+    object Button4: TButton
+      Left = 5
+      Top = 4
+      Width = 19
+      Height = 19
+      Caption = '<'
+      TabOrder = 1
+      OnClick = Button4Click
+    end
     object GroupBox3: TGroupBox
-      Left = 51
-      Top = 20
-      Width = 190
+      Left = 30
+      Top = 17
+      Width = 235
       Height = 309
       Caption = 'Inputs'
-      TabOrder = 0
+      Color = 44784
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 2
       object Label6: TLabel
-        Left = 18
-        Top = 214
+        Left = 27
+        Top = 154
         Width = 71
         Height = 13
         Caption = 'prix de vente :'
         FocusControl = DBEdit6
       end
       object Label5: TLabel
-        Left = 18
-        Top = 168
+        Left = 27
+        Top = 108
         Width = 70
         Height = 13
         Caption = 'parix d achat :'
         FocusControl = DBEdit5
       end
-      object Label4: TLabel
-        Left = 18
-        Top = 120
-        Width = 48
-        Height = 13
-        Caption = 'catigorie :'
-        FocusControl = DBEdit4
-      end
-      object Label3: TLabel
-        Left = 16
-        Top = 77
-        Width = 54
-        Height = 13
-        Caption = 'nom_artcl :'
-        FocusControl = DBEdit3
-      end
       object Label2: TLabel
-        Left = 16
-        Top = 32
-        Width = 50
+        Left = 27
+        Top = 34
+        Width = 32
         Height = 13
-        Caption = 'bar-code :'
+        Caption = 'Famille'
         FocusControl = DBEdit2
       end
+      object Label3: TLabel
+        Left = 27
+        Top = 72
+        Width = 28
+        Height = 13
+        Caption = 'Model'
+        FocusControl = DBEdit3
+      end
       object DBEdit6: TDBEdit
-        Left = 18
-        Top = 233
-        Width = 150
+        Left = 27
+        Top = 173
+        Width = 180
         Height = 21
         DataField = 'prix de vente'
-        DataSource = DataSource1
         TabOrder = 0
       end
       object DBEdit5: TDBEdit
-        Left = 18
-        Top = 187
-        Width = 150
+        Left = 27
+        Top = 127
+        Width = 180
         Height = 21
         DataField = 'parix d achat'
-        DataSource = DataSource1
         TabOrder = 1
       end
-      object DBEdit4: TDBEdit
-        Left = 16
-        Top = 139
-        Width = 150
+      object DBEdit2: TDBEdit
+        Left = 27
+        Top = 49
+        Width = 180
         Height = 21
-        DataField = 'catigorie'
-        DataSource = DataSource1
+        DataField = 'Famille'
         TabOrder = 2
       end
       object DBEdit3: TDBEdit
-        Left = 16
-        Top = 93
-        Width = 150
+        Left = 27
+        Top = 86
+        Width = 180
         Height = 21
-        DataField = 'nom_artcl'
-        DataSource = DataSource1
-        TabOrder = 3
-      end
-      object DBEdit2: TDBEdit
-        Left = 16
-        Top = 48
-        Width = 150
-        Height = 21
-        DataField = 'bar-code'
-        DataSource = DataSource1
-        TabOrder = 4
-      end
-    end
-    object GroupBox4: TGroupBox
-      Left = 51
-      Top = 360
-      Width = 190
-      Height = 121
-      Caption = 'Controle'
-      TabOrder = 1
-      object Button4: TButton
-        Left = 99
-        Top = 63
-        Width = 70
-        Height = 25
-        Caption = 'Retour'
-        TabOrder = 0
-        OnClick = Button4Click
-      end
-      object Button2: TButton
-        Left = 99
-        Top = 32
-        Width = 69
-        Height = 25
-        Caption = 'Modify'
-        TabOrder = 1
-      end
-      object Button1: TButton
-        Left = 15
-        Top = 32
-        Width = 75
-        Height = 25
-        Caption = 'Ajouter'
-        TabOrder = 2
-      end
-      object Button3: TButton
-        Left = 16
-        Top = 63
-        Width = 75
-        Height = 25
-        Caption = 'Supprimer'
+        DataField = 'Model'
         TabOrder = 3
       end
     end
@@ -161,17 +158,17 @@ object Article: TArticle
   object GroupBox2: TGroupBox
     Left = 320
     Top = 8
-    Width = 423
+    Width = 424
     Height = 364
     Color = 900351
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
     object DBGrid1: TDBGrid
-      Left = 11
-      Top = 11
+      Left = 12
+      Top = 13
       Width = 403
-      Height = 341
+      Height = 338
       DataSource = DataSource1
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -183,85 +180,85 @@ object Article: TArticle
         item
           Expanded = False
           FieldName = 'ID'
-          Width = 30
+          Width = 70
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'bar-code'
-          Width = 60
+          FieldName = 'Famille'
+          Width = 70
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nom_artcl'
-          Width = 60
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'catigorie'
-          Width = 60
+          FieldName = 'Model'
+          Width = 70
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'parix d achat'
-          Width = 80
+          Width = 70
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'prix de vente'
-          Width = 80
+          Width = 70
           Visible = True
         end>
     end
   end
   object GroupBox5: TGroupBox
-    Left = 320
-    Top = 392
+    Left = 321
+    Top = 383
     Width = 423
-    Height = 129
+    Height = 73
     Caption = 'DB-Controle'
+    Color = 44784
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 2
+    object DBNavigator1: TDBNavigator
+      Left = 19
+      Top = 24
+      Width = 310
+      Height = 26
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+    object Button6: TButton
+      Left = 345
+      Top = 24
+      Width = 62
+      Height = 25
+      Caption = 'Refresh'
+      TabOrder = 1
+      OnClick = Button6Click
+    end
   end
-  object ADOConnection1: TADOConnection
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\ap' +
-      'p\Delphi-project\Database1.mdb;Mode=Share Deny None;Persist Secu' +
-      'rity Info=False;Jet OLEDB:System database="";Jet OLEDB:Registry ' +
-      'Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=5;J' +
-      'et OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk O' +
-      'ps=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database' +
-      ' Password="";Jet OLEDB:Create System Database=False;Jet OLEDB:En' +
-      'crypt Database=False;Jet OLEDB:Don'#39't Copy Locale on Compact=Fals' +
-      'e;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=F' +
-      'alse'
-    Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 416
-    Top = 440
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 472
+    Top = 480
   end
   object ADOTable1: TADOTable
+    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Article'
-    Left = 360
-    Top = 440
+    Left = 408
+    Top = 480
     object ADOTable1ID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
     end
-    object ADOTable1barcode: TWideStringField
-      FieldName = 'bar-code'
+    object ADOTable1Famille: TWideStringField
+      FieldName = 'Famille'
       Size = 255
     end
-    object ADOTable1nom_artcl: TWideStringField
-      FieldName = 'nom_artcl'
-      Size = 255
-    end
-    object ADOTable1catigorie: TWideStringField
-      FieldName = 'catigorie'
+    object ADOTable1Model: TWideStringField
+      FieldName = 'Model'
       Size = 255
     end
     object ADOTable1parixdachat: TWideStringField
@@ -273,9 +270,22 @@ object Article: TArticle
       Size = 255
     end
   end
-  object DataSource1: TDataSource
-    DataSet = ADOTable1
-    Left = 464
-    Top = 440
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Ap' +
+      'p G.Stocks\Delphi-project\Database1.mdb;Mode=Share Deny None;Per' +
+      'sist Security Info=False;Jet OLEDB:System database="";Jet OLEDB:' +
+      'Registry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine' +
+      ' Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Parti' +
+      'al Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New' +
+      ' Database Password="";Jet OLEDB:Create System Database=False;Jet' +
+      ' OLEDB:Encrypt Database=False;Jet OLEDB:Don'#39't Copy Locale on Com' +
+      'pact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OL' +
+      'EDB:SFP=False'
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 336
+    Top = 480
   end
 end

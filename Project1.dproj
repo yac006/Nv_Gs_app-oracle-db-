@@ -112,7 +112,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit8.pas">
-            <Form>articles_achats</Form>
+            <Form>Articles_en_stock</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit9.pas">
+            <Form>Journal_ventes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
