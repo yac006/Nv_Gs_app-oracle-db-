@@ -81,7 +81,7 @@ object Article: TArticle
     end
     object GroupBox3: TGroupBox
       Left = 30
-      Top = 17
+      Top = 22
       Width = 235
       Height = 309
       Caption = 'Inputs'
@@ -89,68 +89,72 @@ object Article: TArticle
       ParentBackground = False
       ParentColor = False
       TabOrder = 2
-      object Label6: TLabel
-        Left = 27
-        Top = 154
-        Width = 71
+      object Label1: TLabel
+        Left = 23
+        Top = 43
+        Width = 42
         Height = 13
-        Caption = 'prix de vente :'
-        FocusControl = DBEdit6
+        Caption = 'Famille : '
+        FocusControl = DBEdit1
       end
-      object Label5: TLabel
-        Left = 27
-        Top = 108
-        Width = 70
+      object Label4: TLabel
+        Left = 23
+        Top = 89
+        Width = 35
         Height = 13
-        Caption = 'parix d achat :'
-        FocusControl = DBEdit5
+        Caption = 'Model :'
+        FocusControl = DBEdit4
       end
       object Label2: TLabel
-        Left = 27
-        Top = 34
-        Width = 32
+        Left = 23
+        Top = 130
+        Width = 73
         Height = 13
-        Caption = 'Famille'
+        Caption = 'parix d achat : '
         FocusControl = DBEdit2
       end
       object Label3: TLabel
-        Left = 27
-        Top = 72
-        Width = 28
+        Left = 23
+        Top = 171
+        Width = 71
         Height = 13
-        Caption = 'Model'
+        Caption = 'prix de vente :'
         FocusControl = DBEdit3
       end
-      object DBEdit6: TDBEdit
-        Left = 27
-        Top = 173
-        Width = 180
-        Height = 21
-        DataField = 'prix de vente'
-        TabOrder = 0
-      end
-      object DBEdit5: TDBEdit
-        Left = 27
-        Top = 127
-        Width = 180
-        Height = 21
-        DataField = 'parix d achat'
-        TabOrder = 1
-      end
-      object DBEdit2: TDBEdit
-        Left = 27
-        Top = 49
+      object DBEdit1: TDBEdit
+        Left = 23
+        Top = 62
         Width = 180
         Height = 21
         DataField = 'Famille'
-        TabOrder = 2
+        DataSource = DataSource1
+        TabOrder = 0
       end
-      object DBEdit3: TDBEdit
-        Left = 27
-        Top = 86
+      object DBEdit4: TDBEdit
+        Left = 23
+        Top = 102
         Width = 180
         Height = 21
         DataField = 'Model'
+        DataSource = DataSource1
+        TabOrder = 1
+      end
+      object DBEdit2: TDBEdit
+        Left = 23
+        Top = 146
+        Width = 180
+        Height = 21
+        DataField = 'parix d achat'
+        DataSource = DataSource1
+        TabOrder = 2
+      end
+      object DBEdit3: TDBEdit
+        Left = 23
+        Top = 187
+        Width = 180
+        Height = 21
+        DataField = 'prix de vente'
+        DataSource = DataSource1
         TabOrder = 3
       end
     end

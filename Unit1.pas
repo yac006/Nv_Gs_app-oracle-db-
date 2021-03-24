@@ -71,6 +71,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -85,6 +86,12 @@ implementation
 {$R *.dfm}
 
 uses Unit2, Unit3, Unit5, Unit4, Unit6;
+
+procedure TPrincipale.BitBtn1Click(Sender: TObject);
+begin
+   ADOTable1.Close;
+   ADOTable1.Open;
+end;
 
 procedure TPrincipale.Button1Click(Sender: TObject);
 begin

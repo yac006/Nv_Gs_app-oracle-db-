@@ -1220,6 +1220,8 @@ object Stock: TStock
     ParentBackground = False
     TabOrder = 1
     OnClick = Panel2Click
+    OnMouseLeave = Panel2MouseLeave
+    OnMouseMove = Panel2MouseMove
   end
   object Panel3: TPanel
     Left = 439
@@ -1231,6 +1233,8 @@ object Stock: TStock
     ParentBackground = False
     TabOrder = 2
     OnClick = Panel3Click
+    OnMouseLeave = Panel3MouseLeave
+    OnMouseMove = Panel3MouseMove
   end
   object Panel4: TPanel
     Left = 256
@@ -1242,5 +1246,7 @@ object Stock: TStock
     ParentBackground = False
     TabOrder = 3
     OnClick = Panel4Click
+    OnMouseLeave = Panel4MouseLeave
+    OnMouseMove = Panel4MouseMove
   end
 end

@@ -199,6 +199,8 @@ begin
 
     ADOTable1.Post;
 
+    ShowMessage('Les données a été enregistrées avec succès ');
+
 end;
 
 procedure TVentes.Button7Click(Sender: TObject);

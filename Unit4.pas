@@ -37,7 +37,6 @@ type
     GroupBox5: TGroupBox;
     GroupBox9: TGroupBox;
     DBLookupComboBox2: TDBLookupComboBox;
-    DBLookupComboBox3: TDBLookupComboBox;
     Button5: TButton;
     Button6: TButton;
     Button1: TButton;
@@ -76,6 +75,9 @@ type
     DBEdit5: TDBEdit;
     DateTimePicker1: TDateTimePicker;
     DBEdit1: TDBEdit;
+    DBLookupComboBox3: TDBLookupComboBox;
+    ADOTable1Année: TWideStringField;
+    DBEdit6: TDBEdit;
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
@@ -182,11 +184,12 @@ begin
 
     //SAVE DATA IN DBGRID
     ADOTable1.Post;
+    ShowMessage('Les données a été enregistrées avec succès ');
 end;
 
 procedure TAchats.DBLookupComboBox1Click(Sender: TObject);
 begin
-    
+
     DBLookupComboBox1.Enabled:=false;
 end;
 

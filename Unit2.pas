@@ -21,14 +21,6 @@ type
     Button5: TButton;
     Button4: TButton;
     GroupBox3: TGroupBox;
-    Label6: TLabel;
-    Label5: TLabel;
-    DBEdit6: TDBEdit;
-    DBEdit5: TDBEdit;
-    Label2: TLabel;
-    DBEdit2: TDBEdit;
-    Label3: TLabel;
-    DBEdit3: TDBEdit;
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
     ADOTable1: TADOTable;
@@ -39,6 +31,14 @@ type
     ADOTable1prixdevente: TWideStringField;
     ADOConnection1: TADOConnection;
     Button6: TButton;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
     procedure Button4Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -63,6 +63,7 @@ uses Unit1, Unit3, Unit4, Unit5;
 procedure TArticle.Button1Click(Sender: TObject);
 begin
      ADOTable1.Post;
+     ShowMessage('Les données a été enregistrées avec succès ');
 end;
 
 procedure TArticle.Button2Click(Sender: TObject);

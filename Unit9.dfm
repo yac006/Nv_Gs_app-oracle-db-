@@ -2,7 +2,7 @@ object Journal_ventes: TJournal_ventes
   Left = 0
   Top = 0
   Caption = 'Journal_ventes'
-  ClientHeight = 547
+  ClientHeight = 537
   ClientWidth = 682
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@ object Journal_ventes: TJournal_ventes
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 229
-    Top = 6
+    Top = 8
     Width = 441
     Height = 247
     Caption = 'Les Bons'
@@ -62,7 +62,7 @@ object Journal_ventes: TJournal_ventes
   end
   object GroupBox2: TGroupBox
     Left = 231
-    Top = 258
+    Top = 260
     Width = 439
     Height = 265
     Caption = 'Les Articles'
@@ -111,7 +111,7 @@ object Journal_ventes: TJournal_ventes
   end
   object Panel1: TPanel
     Left = 7
-    Top = 12
+    Top = 14
     Width = 216
     Height = 511
     Caption = 'Panel1'
@@ -168,7 +168,7 @@ object Journal_ventes: TJournal_ventes
   end
   object Button1: TButton
     Left = 71
-    Top = 233
+    Top = 235
     Width = 83
     Height = 25
     Caption = 'Refresh'

@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Journal_achats'
-  ClientHeight = 537
+  ClientHeight = 526
   ClientWidth = 677
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

@@ -3,7 +3,7 @@ object Articles_en_stock: TArticles_en_stock
   Top = 0
   Hint = 'Refresh'
   Caption = 'Articles_en_stock'
-  ClientHeight = 493
+  ClientHeight = 497
   ClientWidth = 669
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

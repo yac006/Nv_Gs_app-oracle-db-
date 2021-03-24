@@ -2,7 +2,7 @@
   Left = 0
   Top = 154
   Caption = 'Achats'
-  ClientHeight = 551
+  ClientHeight = 545
   ClientWidth = 871
   Color = 49087
   Font.Charset = DEFAULT_CHARSET
@@ -103,43 +103,49 @@
         item
           Expanded = False
           FieldName = 'Famille'
-          Width = 110
+          Width = 99
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'Model'
-          Width = 110
+          Width = 99
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'Ann'#233'e'
+          Width = 99
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'Fourniseur'
-          Width = 110
+          Width = 99
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'Qttacheter'
-          Width = 110
+          Width = 99
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'Datedacheter'
-          Width = 110
+          Width = 99
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'Prixachat'
-          Width = 110
+          Width = 99
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'PrixDeVente'
-          Width = 110
+          Width = 99
           Visible = True
         end>
     end
@@ -203,9 +209,29 @@
       Height = 51
       Caption = 'Fourniseur'
       TabOrder = 2
-      object DBLookupComboBox3: TDBLookupComboBox
-        Left = 10
+      object Button7: TButton
+        Left = 158
+        Top = 18
+        Width = 25
+        Height = 22
+        ImageAlignment = iaCenter
+        ImageIndex = 0
+        Images = ImageList1
+        TabOrder = 0
+        OnClick = Button7Click
+      end
+      object DBEdit1: TDBEdit
+        Left = 28
         Top = 17
+        Width = 100
+        Height = 21
+        DataField = 'NomCmplFrs'
+        DataSource = DataSource1
+        TabOrder = 1
+      end
+      object DBLookupComboBox3: TDBLookupComboBox
+        Left = 12
+        Top = 18
         Width = 145
         Height = 21
         DataField = 'Fourniseur'
@@ -214,18 +240,7 @@
         KeyField = 'NomComplet'
         ListField = 'NomComplet'
         ListSource = DataSource3
-        TabOrder = 0
-      end
-      object Button7: TButton
-        Left = 158
-        Top = 17
-        Width = 25
-        Height = 22
-        ImageAlignment = iaCenter
-        ImageIndex = 0
-        Images = ImageList1
-        TabOrder = 1
-        OnClick = Button7Click
+        TabOrder = 2
       end
     end
     object GroupBox4: TGroupBox
@@ -366,22 +381,22 @@
       Top = 19
       Width = 174
       Height = 51
+      Caption = 'Ann'#233'e'
       TabOrder = 8
-    end
-    object DBEdit1: TDBEdit
-      Left = 517
-      Top = 36
-      Width = 148
-      Height = 21
-      DataField = 'NomCmplFrs'
-      DataSource = DataSource1
-      Enabled = False
-      TabOrder = 9
+      object DBEdit6: TDBEdit
+        Left = 13
+        Top = 18
+        Width = 149
+        Height = 21
+        DataField = 'Ann'#233'e'
+        DataSource = DataSource1
+        TabOrder = 0
+      end
     end
   end
   object Button1: TButton
     Left = 8
-    Top = 526
+    Top = 525
     Width = 40
     Height = 18
     Caption = '<- Back'
@@ -486,7 +501,7 @@
     Left = 464
     Top = 528
     Bitmap = {
-      494C010101009800C00010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101009800CC0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000FEFEFE02FCFC
       FC08FAFAFA0EF7F7F716F5F5F51CF5F5F51CF5F5F51CF5F5F51CF9F9F90FFAFA
@@ -631,7 +646,7 @@
     Left = 520
     Top = 528
     Bitmap = {
-      494C010101001400380032003200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101001400440032003200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000320000000100200000000000409C
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000000000FEFEFD03FEFEFD03FEFE
@@ -1939,7 +1954,7 @@
     Left = 584
     Top = 528
     Bitmap = {
-      494C0101010008004C0032003200BFBF0000FF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000800580032003200BFBF0000FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000320000000100200000000000409C
       0000000000000000000000000000000000000000000000000000010101020303
       0304060606090808080D0D0D0D140F0F0F171515152119191927191919271C1C
@@ -3245,7 +3260,7 @@
     CursorType = ctStatic
     TableName = 'Achats'
     Left = 136
-    Top = 544
+    Top = 528
     object ADOTable1ID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -3280,6 +3295,10 @@
     end
     object ADOTable1NomCmplFrs: TWideStringField
       FieldName = 'NomCmplFrs'
+      Size = 255
+    end
+    object ADOTable1Année: TWideStringField
+      FieldName = 'Ann'#233'e'
       Size = 255
     end
   end

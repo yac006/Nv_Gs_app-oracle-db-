@@ -121,8 +121,11 @@ begin
      if RadioButton1.Checked=True then
         ADOTable1.Post;
 
+
    if RadioButton2.Checked=True then
         ADOTable2.post;
+
+   ShowMessage('Les données a été enregistrées avec succès ');
 end;
 
 procedure TClient_fourniseur.Button6Click(Sender: TObject);
