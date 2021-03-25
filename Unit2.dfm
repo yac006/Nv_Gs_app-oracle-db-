@@ -214,10 +214,10 @@ object Article: TArticle
     end
   end
   object GroupBox5: TGroupBox
-    Left = 321
-    Top = 383
+    Left = 320
+    Top = 398
     Width = 423
-    Height = 73
+    Height = 78
     Caption = 'DB-Controle'
     Color = 44784
     ParentBackground = False
@@ -225,7 +225,7 @@ object Article: TArticle
     TabOrder = 2
     object DBNavigator1: TDBNavigator
       Left = 19
-      Top = 24
+      Top = 29
       Width = 310
       Height = 26
       DataSource = DataSource1
@@ -233,7 +233,7 @@ object Article: TArticle
     end
     object Button6: TButton
       Left = 345
-      Top = 24
+      Top = 29
       Width = 62
       Height = 25
       Caption = 'Refresh'
@@ -244,7 +244,7 @@ object Article: TArticle
   object DataSource1: TDataSource
     DataSet = ADOTable1
     Left = 472
-    Top = 480
+    Top = 488
   end
   object ADOTable1: TADOTable
     Active = True
@@ -252,7 +252,7 @@ object Article: TArticle
     CursorType = ctStatic
     TableName = 'Article'
     Left = 408
-    Top = 480
+    Top = 488
     object ADOTable1ID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -277,19 +277,18 @@ object Article: TArticle
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Ap' +
-      'p G.Stocks\Delphi-project\Database1.mdb;Mode=Share Deny None;Per' +
-      'sist Security Info=False;Jet OLEDB:System database="";Jet OLEDB:' +
-      'Registry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine' +
-      ' Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Parti' +
-      'al Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New' +
-      ' Database Password="";Jet OLEDB:Create System Database=False;Jet' +
-      ' OLEDB:Encrypt Database=False;Jet OLEDB:Don'#39't Copy Locale on Com' +
-      'pact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OL' +
-      'EDB:SFP=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Gs' +
+      '_app\Database1.mdb;Mode=Share Deny None;Persist Security Info=Fa' +
+      'lse;Jet OLEDB:System database="";Jet OLEDB:Registry Path="";Jet ' +
+      'OLEDB:Database Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Dat' +
+      'abase Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLE' +
+      'DB:Global Bulk Transactions=1;Jet OLEDB:New Database Password=""' +
+      ';Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Databa' +
+      'se=False;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:' +
+      'Compact Without Replica Repair=False;Jet OLEDB:SFP=False'
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 336
-    Top = 480
+    Top = 488
   end
 end

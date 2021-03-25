@@ -3,8 +3,8 @@ object Principale: TPrincipale
   Top = 192
   BorderStyle = bsSizeToolWin
   Caption = 'Principale'
-  ClientHeight = 503
-  ClientWidth = 609
+  ClientHeight = 493
+  ClientWidth = 610
   Color = 12030496
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -353,7 +353,7 @@ object Principale: TPrincipale
     object Label1: TLabel
       Left = 26
       Top = 21
-      Width = 360
+      Width = 351
       Height = 101
       Anchors = []
       AutoSize = False
@@ -361,14 +361,14 @@ object Principale: TPrincipale
       Color = clBtnFace
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -87
-      Font.Name = 'Chiller'
-      Font.Style = [fsItalic]
+      Font.Height = -37
+      Font.Name = 'Traditional Arabic'
+      Font.Style = [fsBold, fsUnderline]
       ParentColor = False
       ParentFont = False
     end
     object Image1: TImage
-      Left = 403
+      Left = 404
       Top = 28
       Width = 71
       Height = 87
@@ -887,7 +887,7 @@ object Principale: TPrincipale
     Left = 684
     Top = 448
     Bitmap = {
-      494C010101003800600019001900FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010038006C0019001900FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000640000001900000001002000000000001027
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000000000FCFCFC03020202FD0000
@@ -1220,6 +1220,7 @@ object Principale: TPrincipale
       000000000000}
   end
   object ADOTable1: TADOTable
+    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Achats'
@@ -1227,9 +1228,10 @@ object Principale: TPrincipale
     Top = 392
   end
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\App G.Stocks\Del' +
-      'phi-project\Database1.mdb;Persist Security Info=False;'
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Gs_app\Database1' +
+      '.mdb;Persist Security Info=False'
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 640

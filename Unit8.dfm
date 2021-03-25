@@ -3,8 +3,8 @@ object Articles_en_stock: TArticles_en_stock
   Top = 0
   Hint = 'Refresh'
   Caption = 'Articles_en_stock'
-  ClientHeight = 497
-  ClientWidth = 669
+  ClientHeight = 498
+  ClientWidth = 666
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -1001,8 +1001,8 @@ object Articles_en_stock: TArticles_en_stock
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\App G.Stocks\Del' +
-      'phi-project\Database1.mdb;Persist Security Info=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Gs_app\Database1' +
+      '.mdb;Persist Security Info=False'
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 64
@@ -1023,7 +1023,7 @@ object Articles_en_stock: TArticles_en_stock
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=C:\App G.Stocks\Delphi-project\Database1.mdb'
+      'Database=C:\Gs_app\Database1.mdb'
       'User_Name=yac'
       'Password=root'
       'ConnectionDef=Access_Demo')
@@ -1057,6 +1057,7 @@ object Articles_en_stock: TArticles_en_stock
     Top = 488
   end
   object FDQuery2: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT Prixachat FROM Achats WHERE Model=:paramt02')
@@ -1076,6 +1077,7 @@ object Articles_en_stock: TArticles_en_stock
     Top = 488
   end
   object FDQuery3: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT PrixDeVente FROM Achats WHERE Model=:paramt03')

@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Ventes'
-  ClientHeight = 537
+  ClientHeight = 542
   ClientWidth = 895
   Color = 2134015
   Font.Charset = DEFAULT_CHARSET
@@ -478,8 +478,8 @@
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\App G.Stocks\Del' +
-      'phi-project\Database1.mdb;Persist Security Info=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Gs_app\Database1' +
+      '.mdb;Persist Security Info=False'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
@@ -584,7 +584,7 @@
     Left = 488
     Top = 520
     Bitmap = {
-      494C010101000800600010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000800680010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000FEFEFE02FCFC
       FC08FAFAFA0EF7F7F716F5F5F51CF5F5F51CF5F5F51CF5F5F51CF9F9F90FFAFA
@@ -730,7 +730,7 @@
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=C:\App G.Stocks\Delphi-project\Database1.mdb'
+      'Database=C:\Gs_app\Database1.mdb'
       'User_Name=yac'
       'Password=root'
       'ConnectionDef=Access_Demo')
@@ -1228,7 +1228,7 @@
     Left = 544
     Top = 520
     Bitmap = {
-      494C010102000C00480010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000C00500010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
