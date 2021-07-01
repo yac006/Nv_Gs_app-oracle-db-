@@ -25,7 +25,7 @@ object Article: TArticle
     TabOrder = 0
     object GroupBox4: TGroupBox
       Left = 30
-      Top = 360
+      Top = 372
       Width = 235
       Height = 120
       Caption = 'Controle'
@@ -81,81 +81,115 @@ object Article: TArticle
     end
     object GroupBox3: TGroupBox
       Left = 30
-      Top = 22
+      Top = 23
       Width = 235
-      Height = 309
+      Height = 330
       Caption = 'Inputs'
       Color = 44784
       ParentBackground = False
       ParentColor = False
       TabOrder = 2
       object Label1: TLabel
-        Left = 23
-        Top = 43
-        Width = 42
+        Left = 24
+        Top = 37
+        Width = 65
         Height = 13
-        Caption = 'Famille : '
+        Caption = 'ID_VEHICULE'
         FocusControl = DBEdit1
       end
-      object Label4: TLabel
-        Left = 23
-        Top = 89
-        Width = 35
-        Height = 13
-        Caption = 'Model :'
-        FocusControl = DBEdit4
-      end
       object Label2: TLabel
-        Left = 23
-        Top = 130
-        Width = 73
+        Left = 24
+        Top = 77
+        Width = 53
         Height = 13
-        Caption = 'parix d achat : '
+        Caption = 'FAMILLE_V'
         FocusControl = DBEdit2
       end
       object Label3: TLabel
-        Left = 23
-        Top = 171
-        Width = 71
+        Left = 24
+        Top = 117
+        Width = 46
         Height = 13
-        Caption = 'prix de vente :'
+        Caption = 'MODEL_V'
         FocusControl = DBEdit3
       end
+      object Label4: TLabel
+        Left = 24
+        Top = 157
+        Width = 70
+        Height = 13
+        Caption = 'CATEGORIE_V'
+        FocusControl = DBEdit4
+      end
+      object Label6: TLabel
+        Left = 24
+        Top = 197
+        Width = 59
+        Height = 13
+        Caption = 'COULEUR_V'
+        FocusControl = DBEdit6
+      end
+      object Label7: TLabel
+        Left = 24
+        Top = 237
+        Width = 19
+        Height = 13
+        Caption = 'P_U'
+        FocusControl = DBEdit7
+      end
       object DBEdit1: TDBEdit
-        Left = 23
-        Top = 62
+        Left = 24
+        Top = 53
         Width = 180
         Height = 21
-        DataField = 'Famille'
-        DataSource = DataSource1
+        DataField = 'ID_VEHICULE'
+        DataSource = UniDataSource1
         TabOrder = 0
       end
-      object DBEdit4: TDBEdit
-        Left = 23
-        Top = 102
+      object DBEdit2: TDBEdit
+        Left = 24
+        Top = 93
         Width = 180
         Height = 21
-        DataField = 'Model'
-        DataSource = DataSource1
+        DataField = 'FAMILLE_V'
+        DataSource = UniDataSource1
         TabOrder = 1
       end
-      object DBEdit2: TDBEdit
-        Left = 23
-        Top = 146
+      object DBEdit3: TDBEdit
+        Left = 24
+        Top = 133
         Width = 180
         Height = 21
-        DataField = 'parix d achat'
-        DataSource = DataSource1
+        DataField = 'MODEL_V'
+        DataSource = UniDataSource1
         TabOrder = 2
       end
-      object DBEdit3: TDBEdit
-        Left = 23
-        Top = 187
+      object DBEdit4: TDBEdit
+        Left = 24
+        Top = 173
         Width = 180
         Height = 21
-        DataField = 'prix de vente'
-        DataSource = DataSource1
+        DataField = 'CATEGORIE_V'
+        DataSource = UniDataSource1
         TabOrder = 3
+      end
+      object DBEdit6: TDBEdit
+        Left = 24
+        Top = 213
+        Width = 180
+        Height = 21
+        DataField = 'COULEUR_V'
+        DataSource = UniDataSource1
+        TabOrder = 4
+      end
+      object DBEdit7: TDBEdit
+        Left = 24
+        Top = 253
+        Width = 180
+        Height = 21
+        DataField = 'P_U'
+        DataSource = UniDataSource1
+        TabOrder = 5
       end
     end
   end
@@ -173,7 +207,7 @@ object Article: TArticle
       Top = 13
       Width = 403
       Height = 338
-      DataSource = DataSource1
+      DataSource = UniDataSource1
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -183,32 +217,38 @@ object Article: TArticle
       Columns = <
         item
           Expanded = False
-          FieldName = 'ID'
-          Width = 70
+          FieldName = 'ID_VEHICULE'
+          Width = 77
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Famille'
-          Width = 70
+          FieldName = 'FAMILLE_V'
+          Width = 77
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Model'
-          Width = 70
+          FieldName = 'MODEL_V'
+          Width = 77
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'parix d achat'
-          Width = 70
+          FieldName = 'CATEGORIE_V'
+          Width = 77
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'prix de vente'
-          Width = 70
+          FieldName = 'COULEUR_V'
+          Width = 77
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'P_U'
+          Width = 77
           Visible = True
         end>
     end
@@ -228,7 +268,7 @@ object Article: TArticle
       Top = 29
       Width = 310
       Height = 26
-      DataSource = DataSource1
+      DataSource = UniDataSource1
       TabOrder = 0
     end
     object Button6: TButton
@@ -236,59 +276,58 @@ object Article: TArticle
       Top = 29
       Width = 62
       Height = 25
-      Caption = 'Refresh'
+      Caption = 'Actualiser'
       TabOrder = 1
       OnClick = Button6Click
     end
   end
-  object DataSource1: TDataSource
-    DataSet = ADOTable1
-    Left = 472
-    Top = 488
-  end
-  object ADOTable1: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Article'
-    Left = 408
-    Top = 488
-    object ADOTable1ID: TAutoIncField
-      FieldName = 'ID'
-      ReadOnly = True
-    end
-    object ADOTable1Famille: TWideStringField
-      FieldName = 'Famille'
-      Size = 255
-    end
-    object ADOTable1Model: TWideStringField
-      FieldName = 'Model'
-      Size = 255
-    end
-    object ADOTable1parixdachat: TWideStringField
-      FieldName = 'parix d achat'
-      Size = 255
-    end
-    object ADOTable1prixdevente: TWideStringField
-      FieldName = 'prix de vente'
-      Size = 255
-    end
-  end
-  object ADOConnection1: TADOConnection
+  object UniConnection1: TUniConnection
+    ProviderName = 'Oracle'
+    SpecificOptions.Strings = (
+      'Oracle.Direct=True')
+    Username = 'yac_02'
+    Server = 'localhost:1521:sn=XE'
     Connected = True
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Gs' +
-      '_app\Database1.mdb;Mode=Share Deny None;Persist Security Info=Fa' +
-      'lse;Jet OLEDB:System database="";Jet OLEDB:Registry Path="";Jet ' +
-      'OLEDB:Database Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Dat' +
-      'abase Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLE' +
-      'DB:Global Bulk Transactions=1;Jet OLEDB:New Database Password=""' +
-      ';Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Databa' +
-      'se=False;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:' +
-      'Compact Without Replica Repair=False;Jet OLEDB:SFP=False'
-    Mode = cmShareDenyNone
-    Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 336
-    Top = 488
+    Left = 447
+    Top = 490
+    EncryptedPassword = '9EFF9BFF92FF96FF91FFCFFFCFFFCEFF'
+  end
+  object UniTable1: TUniTable
+    TableName = 'VEHICULE'
+    Connection = UniConnection1
+    Active = True
+    Left = 514
+    Top = 490
+    object UniTable1ID_VEHICULE: TFloatField
+      FieldName = 'ID_VEHICULE'
+      Required = True
+    end
+    object UniTable1FAMILLE_V: TStringField
+      FieldName = 'FAMILLE_V'
+      Size = 30
+    end
+    object UniTable1MODEL_V: TStringField
+      FieldName = 'MODEL_V'
+      Size = 30
+    end
+    object UniTable1CATEGORIE_V: TStringField
+      FieldName = 'CATEGORIE_V'
+      Size = 30
+    end
+    object UniTable1COULEUR_V: TStringField
+      FieldName = 'COULEUR_V'
+    end
+    object UniTable1P_U: TFloatField
+      FieldName = 'P_U'
+    end
+  end
+  object UniDataSource1: TUniDataSource
+    DataSet = UniTable1
+    Left = 580
+    Top = 490
+  end
+  object OracleUniProvider1: TOracleUniProvider
+    Left = 355
+    Top = 487
   end
 end

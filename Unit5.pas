@@ -11,13 +11,10 @@ uses
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys,
   FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI,
-  frxClass, frxDBSet, Vcl.Buttons;
+  frxClass, frxDBSet, Vcl.Buttons, DBAccess, Uni, MemDS;
 
 type
   TVentes = class(TForm)
-    ADOConnection1: TADOConnection;
-    ADOTable1: TADOTable;
-    DataSource1: TDataSource;
     Panel1: TPanel;
     GroupBox1: TGroupBox;
     Label1: TLabel;
@@ -29,9 +26,7 @@ type
     GroupBox4: TGroupBox;
     GroupBox5: TGroupBox;
     GroupBox3: TGroupBox;
-    DBEdit4: TDBEdit;
     GroupBox6: TGroupBox;
-    DBEdit5: TDBEdit;
     GroupBox7: TGroupBox;
     Button1: TButton;
     GroupBox8: TGroupBox;
@@ -41,52 +36,62 @@ type
     DBLookupComboBox1: TDBLookupComboBox;
     DBLookupComboBox2: TDBLookupComboBox;
     DBLookupComboBox3: TDBLookupComboBox;
-    ADOTable2: TADOTable;
-    ADOTable3: TADOTable;
-    DataSource2: TDataSource;
-    DataSource3: TDataSource;
     Button007: TButton;
     ImageList1: TImageList;
-    DateTimePicker1: TDateTimePicker;
     Panel2: TPanel;
     Button5: TButton;
     Button7: TButton;
     Button8: TButton;
-    DataSource4: TDataSource;
+    Data_Src_qry_qte_achats: TDataSource;
     Edit1: TEdit;
     DBEdit1: TDBEdit;
-    FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    FDQuery2: TFDQuery;
-    DataSource5: TDataSource;
+    Data_Src_qry_PU: TDataSource;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
-    ADOTable1ID: TAutoIncField;
-    ADOTable1Model: TWideStringField;
-    ADOTable1Client: TWideStringField;
-    ADOTable1Datedevente: TWideStringField;
-    ADOTable1Qt: TWideStringField;
-    ADOTable1Famille: TWideStringField;
-    ADOTable1PrixDeVente: TWideStringField;
-    DBEdit2: TDBEdit;
-    DBEdit_data_Sr5: TDBEdit;
     Button6: TButton;
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
     ImageList2: TImageList;
-    ADOTable3ID: TAutoIncField;
-    ADOTable3Nom: TWideStringField;
-    ADOTable3Prénom: TWideStringField;
-    ADOTable3address: TWideStringField;
-    ADOTable3Télé: TIntegerField;
-    ADOTable3Email: TWideStringField;
-    ADOTable3NomComplet: TWideStringField;
     Button2: TButton;
     Panel3: TPanel;
     BitBtn1: TBitBtn;
+    UniTable1: TUniTable;
+    UniTable2: TUniTable;
+    UniTable3: TUniTable;
+    UniDataSource1: TUniDataSource;
+    UniDataSource2: TUniDataSource;
+    UniDataSource3: TUniDataSource;
+    UniTable4: TUniTable;
+    UniDataSource4: TUniDataSource;
+    DataSource_test: TDataSource;
+    UniTable_test: TUniTable;
+    UniQuery1_get_id_veh: TUniQuery;
+    UniData_src_qry01: TUniDataSource;
+    DBEdit_data_src_qry01: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DateTimePicker1: TDateTimePicker;
+    DBEdit5: TDBEdit;
+    UniQuery_get_Qte_achats: TUniQuery;
+    UniQuery_get_PU: TUniQuery;
+    UniTable1ID_VENTE: TFloatField;
+    UniTable1ID_VEHICULE: TFloatField;
+    UniTable1ID_CLIENT: TFloatField;
+    UniTable1QTE_V: TFloatField;
+    UniTable1DATE_V: TStringField;
+    DBEdit2: TDBEdit;
+    DBEdit_data_Sr5: TDBEdit;
+    frxDBDataset2: TfrxDBDataset;
+    frxDBDataset3: TfrxDBDataset;
+    UniQuery2_get_id_clt: TUniQuery;
+    UniData_src_qry02: TUniDataSource;
+    DBEdit7: TDBEdit;
+    DbEdit_Data_src_qry02: TDBEdit;
+    Button9: TButton;
+    UniTable1PRIX_V: TFloatField;
     procedure Button3Click(Sender: TObject);
     procedure Button007Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
@@ -97,6 +102,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -110,7 +116,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit2, Unit3, Unit4;
+uses Unit1, Unit2, Unit3, Unit4, Unit9;
 
 procedure TVentes.BitBtn1Click(Sender: TObject);
 begin
@@ -126,32 +132,35 @@ procedure TVentes.Button1Click(Sender: TObject);
 
 begin
       //Affectation de la valeur du DBLookupComboBox2 pour Edit1
-      edit1.Text:= DBLookupComboBox2.Text;
+      Edit1.Text:= DBLookupComboBox2.Text;
 
 
-      //------ Affectation de la valeur de edit1 pour le parametre de FDQuery1 -----//
-      FDQuery1.Close;
-      FDQuery1.ParamByName('paramt01').AsString := Edit1.Text;
-      FDQuery1.Open;
+      //------ Affectation de la valeur de Edit1(Model_vehicule) pour le parametre de la requette sql -----//
+      UniQuery_get_Qte_achats.Close;
+      UniQuery_get_Qte_achats.ParamByName('parm_03').AsString := Edit1.Text;
+      UniQuery_get_Qte_achats.Open;
 
-      //------ Affectation de la valeur de edit1 pour le parametre de FDQuery2 -----//
-      FDQuery2.Close;
-      FDQuery2.ParamByName('paramt02').AsString := Edit1.Text;
-      FDQuery2.Open;
+      //------ Affectation de la valeur de Edit1(Model_vehicule) pour le parametre de la requette sql -----//
+      UniQuery_get_PU.Close;
+      UniQuery_get_PU.ParamByName('parm_04').AsString := Edit1.Text;
+      UniQuery_get_PU.Open;
 
 
 end;
 
 procedure TVentes.Button2Click(Sender: TObject);
 begin
-   ADOTable1.Close;
-   ADOTable1.Open;
+   UniTable1.Close;
+   UniTable1.Open;
 
-   ADOTable2.Close;
-   ADOTable2.Open;
+   UniTable2.Close;
+   UniTable2.Open;
 
-   ADOTable3.Close;
-   ADOTable3.Open;
+   UniTable3.Close;
+   UniTable3.Open;
+
+   UniTable4.Close;
+   UniTable4.Open;
 
 end;
 
@@ -170,7 +179,7 @@ end;
 procedure TVentes.Button5Click(Sender: TObject);
 begin
 
-     ADOTable1.Append;
+     UniTable1.Append;
 
     //Déverouiller les champs d'entrées
     DBLookupComboBox1.Enabled:=true;
@@ -190,14 +199,31 @@ end;
 
 procedure TVentes.Button6Click(Sender: TObject);
 begin
-    //AFFECTATION DU VALEUR DE DATETIMEPICKER1 AU DBEDIT7
+
+    //Affecter la valeur de DBLookupComboBox2 pour le paramètre de la requete sql(UniQuery1_get_id_veh)
+    UniQuery1_get_id_veh.Close;
+    UniQuery1_get_id_veh.ParamByName('parm_01').AsString := DBLookupComboBox2.Text;
+    UniQuery1_get_id_veh.Open;
+
+    DBEdit3.Text := DBEdit_data_src_qry01.Text;
+
+    //Affecter la valeur de DBLookupComboBox3 pour le paramètre de la requete sql(UniQuery2_get_id_clt)
+    UniQuery2_get_id_clt.Close;
+    UniQuery2_get_id_clt.ParamByName('parm_02').AsString := DBLookupComboBox3.Text;
+    UniQuery2_get_id_clt.Open;
+
+    DBEdit7.Text := DbEdit_Data_src_qry02.Text;
+
+
+
+    //AFFECTATION DU VALEUR DE DATETIMEPICKER1 POUR LE CHAMP Date_v de la table(VENTES)
     DBEdit4.Text:= DateToStr(DateTimePicker1.Date);
-    //Affecter le p.u pour dbedit2(champ d'entrée de la table ventes"ADOTable1")
+    //Affecter le p.u pour DbEdit2(champ d'entrée de la table VENTES)
     DBEdit2.Text:= DBEdit_data_Sr5.Text ;
     //AFFICHAGE LE TOTAL EN "Label5"
     Label5.Caption:= DBEdit_data_Sr5.Text ;
 
-    ADOTable1.Post;
+    UniTable1.Post;
 
     ShowMessage('Les données a été enregistrées avec succès ');
 
@@ -205,12 +231,18 @@ end;
 
 procedure TVentes.Button7Click(Sender: TObject);
 begin
-     ADOTable1.Edit;
+     UniTable1.Edit;
 end;
 
 procedure TVentes.Button8Click(Sender: TObject);
 begin
-    ADOTable1.Delete;
+    UniTable1.Delete;
+end;
+
+procedure TVentes.Button9Click(Sender: TObject);
+begin
+   Principale.Show;
+   Ventes.Hide;
 end;
 
 end.

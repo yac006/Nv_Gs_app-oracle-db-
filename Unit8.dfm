@@ -3,9 +3,9 @@ object Articles_en_stock: TArticles_en_stock
   Top = 0
   Hint = 'Refresh'
   Caption = 'Articles_en_stock'
-  ClientHeight = 498
-  ClientWidth = 666
-  Color = clBtnFace
+  ClientHeight = 557
+  ClientWidth = 749
+  Color = 12087408
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -25,10 +25,10 @@ object Articles_en_stock: TArticles_en_stock
     OnClick = Button_rtClick
   end
   object Panel2: TPanel
-    Left = 32
-    Top = 167
-    Width = 612
-    Height = 300
+    Left = 33
+    Top = 153
+    Width = 696
+    Height = 352
     Caption = 'Panel2'
     Color = 174
     ShowCaption = False
@@ -41,15 +41,15 @@ object Articles_en_stock: TArticles_en_stock
     end
     object GroupBox2: TGroupBox
       Left = 20
-      Top = 19
-      Width = 314
+      Top = 30
+      Width = 373
       Height = 265
       Color = 14737632
       ParentColor = False
       TabOrder = 0
       object Label5: TLabel
-        Left = 22
-        Top = 205
+        Left = 50
+        Top = 202
         Width = 99
         Height = 16
         Caption = 'Prix de vente : '
@@ -61,8 +61,8 @@ object Articles_en_stock: TArticles_en_stock
         ParentFont = False
       end
       object Label6: TLabel
-        Left = 32
-        Top = 152
+        Left = 60
+        Top = 151
         Width = 86
         Height = 16
         Caption = 'Prix d'#39'achat :'
@@ -74,8 +74,8 @@ object Articles_en_stock: TArticles_en_stock
         ParentFont = False
       end
       object Label4: TLabel
-        Left = 69
-        Top = 101
+        Left = 97
+        Top = 98
         Width = 51
         Height = 16
         Caption = 'Model : '
@@ -87,8 +87,8 @@ object Articles_en_stock: TArticles_en_stock
         ParentFont = False
       end
       object Label3: TLabel
-        Left = 65
-        Top = 48
+        Left = 93
+        Top = 51
         Width = 55
         Height = 16
         Caption = 'Famille : '
@@ -100,43 +100,43 @@ object Articles_en_stock: TArticles_en_stock
         ParentFont = False
       end
       object DBEdit1: TDBEdit
-        Left = 128
-        Top = 47
+        Left = 156
+        Top = 48
         Width = 160
         Height = 21
-        DataField = 'Famille'
+        DataField = 'FAMILLE_V'
         DataSource = DataSource2
         TabOrder = 0
       end
       object DBEdit3: TDBEdit
-        Left = 128
+        Left = 156
         Top = 95
         Width = 160
         Height = 21
         TabOrder = 1
       end
       object DBEdit2: TDBEdit
-        Left = 128
+        Left = 156
         Top = 148
         Width = 160
         Height = 21
-        DataField = 'Prixachat'
+        DataField = 'PRIX_A'
         DataSource = DataSource3
         TabOrder = 2
       end
       object DBEdit5: TDBEdit
-        Left = 128
+        Left = 156
         Top = 200
         Width = 160
         Height = 21
-        DataField = 'PrixDeVente'
+        DataField = 'PRIX_V'
         DataSource = DataSource4
         TabOrder = 3
       end
     end
     object GroupBox3: TGroupBox
-      Left = 345
-      Top = 19
+      Left = 417
+      Top = 30
       Width = 253
       Height = 265
       TabOrder = 1
@@ -886,12 +886,13 @@ object Articles_en_stock: TArticles_en_stock
     end
   end
   object Panel1: TPanel
-    Left = 32
+    Left = 33
     Top = 34
-    Width = 346
-    Height = 97
+    Width = 696
+    Height = 99
     Caption = 'Panel1'
-    Color = 14737632
+    Color = 12087408
+    ParentBackground = False
     ShowCaption = False
     TabOrder = 2
     object TLabel
@@ -901,8 +902,8 @@ object Articles_en_stock: TArticles_en_stock
       Height = 13
     end
     object Label1: TLabel
-      Left = 32
-      Top = 21
+      Left = 50
+      Top = 20
       Width = 94
       Height = 17
       Caption = 'Model Voiture : '
@@ -913,19 +914,39 @@ object Articles_en_stock: TArticles_en_stock
       Font.Style = []
       ParentFont = False
     end
+    object GroupBox1: TGroupBox
+      Left = 417
+      Top = 14
+      Width = 253
+      Height = 67
+      Caption = 'QTT :'
+      Color = 14737632
+      ParentColor = False
+      TabOrder = 0
+      object DBEdit4: TDBEdit
+        Left = 45
+        Top = 24
+        Width = 172
+        Height = 21
+        Color = clWhite
+        DataField = 'QTE_A'
+        DataSource = DataSource5
+        TabOrder = 0
+      end
+    end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 32
-      Top = 45
+      Left = 50
+      Top = 44
       Width = 184
       Height = 21
-      KeyField = 'Model'
-      ListField = 'Model'
-      ListSource = DataSource1
-      TabOrder = 0
+      KeyField = 'MODEL_V'
+      ListField = 'MODEL_V'
+      ListSource = UniDataSrc_table_vehicule
+      TabOrder = 1
     end
     object BitBtn1: TBitBtn
-      Left = 249
-      Top = 45
+      Left = 239
+      Top = 44
       Width = 26
       Height = 21
       Glyph.Data = {
@@ -943,12 +964,12 @@ object Articles_en_stock: TArticles_en_stock
         333333773FF77333333333370007333333333333777333333333}
       Layout = blGlyphRight
       NumGlyphs = 2
-      TabOrder = 1
+      TabOrder = 2
       OnClick = BitBtn1Click
     end
     object BitBtn002: TBitBtn
-      Left = 221
-      Top = 45
+      Left = 265
+      Top = 44
       Width = 26
       Height = 21
       Glyph.Data = {
@@ -965,155 +986,139 @@ object Articles_en_stock: TArticles_en_stock
         333333F7F3337777FFF334448888888444333777FFFFFFF777F334CCCCCCCCCC
         C43337777777777777F334444444444444333777777777777733}
       NumGlyphs = 2
-      TabOrder = 2
+      TabOrder = 3
       OnClick = BitBtn002Click
     end
   end
-  object Panel3: TPanel
-    Left = 392
-    Top = 34
-    Width = 249
-    Height = 97
-    Caption = 'Panel3'
-    Color = 236
-    ShowCaption = False
+  object CategoryPanelGroup1: TCategoryPanelGroup
+    Left = 0
+    Top = 0
+    Width = 2
+    Height = 557
+    VertScrollBar.Tracking = True
+    HeaderFont.Charset = DEFAULT_CHARSET
+    HeaderFont.Color = clWindowText
+    HeaderFont.Height = -11
+    HeaderFont.Name = 'Tahoma'
+    HeaderFont.Style = []
     TabOrder = 3
-    object GroupBox1: TGroupBox
-      Left = 23
-      Top = 11
-      Width = 201
-      Height = 67
-      Caption = 'QTT :'
-      Color = 14737632
-      ParentColor = False
-      TabOrder = 0
-      object DBEdit4: TDBEdit
-        Left = 22
-        Top = 27
-        Width = 161
-        Height = 21
-        DataField = 'Qttacheter'
-        DataSource = DataSource5
-        TabOrder = 0
-      end
-    end
-  end
-  object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Gs_app\Database1' +
-      '.mdb;Persist Security Info=False'
-    Mode = cmShareDenyNone
-    Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 64
-    Top = 488
-  end
-  object ADOTable1_Articles: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Article'
-    Left = 160
-    Top = 488
-  end
-  object DataSource1: TDataSource
-    DataSet = ADOTable1_Articles
-    Left = 248
-    Top = 488
-  end
-  object FDConnection1: TFDConnection
-    Params.Strings = (
-      'Database=C:\Gs_app\Database1.mdb'
-      'User_Name=yac'
-      'Password=root'
-      'ConnectionDef=Access_Demo')
-    Connected = True
-    Left = 352
-    Top = 488
-  end
-  object FDQuery1: TFDQuery
-    Active = True
-    Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT Famille FROM Achats WHERE Model=:paramt01')
-    Left = 416
-    Top = 488
-    ParamData = <
-      item
-        Name = 'PARAMT01'
-        DataType = ftString
-        ParamType = ptInput
-        Value = Null
-      end>
-  end
-  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
-    Provider = 'Forms'
-    Left = 688
-    Top = 216
   end
   object DataSource2: TDataSource
-    DataSet = FDQuery1
-    Left = 480
-    Top = 488
-  end
-  object FDQuery2: TFDQuery
-    Active = True
-    Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT Prixachat FROM Achats WHERE Model=:paramt02')
-    Left = 552
-    Top = 488
-    ParamData = <
-      item
-        Name = 'PARAMT02'
-        DataType = ftString
-        ParamType = ptInput
-        Value = Null
-      end>
+    DataSet = UniQuery1
+    Left = 488
+    Top = 504
   end
   object DataSource3: TDataSource
-    DataSet = FDQuery2
-    Left = 609
-    Top = 488
-  end
-  object FDQuery3: TFDQuery
-    Active = True
-    Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT PrixDeVente FROM Achats WHERE Model=:paramt03')
-    Left = 672
-    Top = 480
-    ParamData = <
-      item
-        Name = 'PARAMT03'
-        DataType = ftString
-        ParamType = ptInput
-        Value = Null
-      end>
+    DataSet = UniQuery2
+    Left = 617
+    Top = 504
   end
   object DataSource4: TDataSource
-    DataSet = FDQuery3
-    Left = 672
-    Top = 436
+    DataSet = UniQuery3
+    Left = 720
+    Top = 447
   end
-  object FDQuery4: TFDQuery
-    Active = True
-    Connection = FDConnection1
+  object DataSource5: TDataSource
+    DataSet = UniQuery4
+    Left = 721
+    Top = 320
+  end
+  object UniTable_vehicule: TUniTable
+    TableName = 'VEHICULE'
+    Connection = Article.UniConnection1
+    Left = 48
+    Top = 496
+    object UniTable_vehiculeID_VEHICULE: TFloatField
+      FieldName = 'ID_VEHICULE'
+      Required = True
+    end
+    object UniTable_vehiculeFAMILLE_V: TStringField
+      FieldName = 'FAMILLE_V'
+      Size = 30
+    end
+    object UniTable_vehiculeMODEL_V: TStringField
+      FieldName = 'MODEL_V'
+      Size = 30
+    end
+    object UniTable_vehiculeCATEGORIE_V: TStringField
+      FieldName = 'CATEGORIE_V'
+      Size = 30
+    end
+    object UniTable_vehiculeCOULEUR_V: TStringField
+      FieldName = 'COULEUR_V'
+    end
+    object UniTable_vehiculeP_U: TFloatField
+      FieldName = 'P_U'
+    end
+  end
+  object UniDataSrc_table_vehicule: TUniDataSource
+    DataSet = UniTable_vehicule
+    Left = 168
+    Top = 496
+  end
+  object UniQuery1: TUniQuery
+    Connection = Article.UniConnection1
     SQL.Strings = (
-      'SELECT Qttacheter FROM Achats WHERE Model=:paramt04')
-    Left = 676
-    Top = 360
+      'SELECT Famille_v FROM Vehicule WHERE Model_v = :paramt01')
+    Active = True
+    Left = 424
+    Top = 504
     ParamData = <
       item
-        Name = 'PARAMT04'
-        DataType = ftString
-        ParamType = ptInput
+        DataType = ftUnknown
+        Name = 'paramt01'
         Value = Null
       end>
   end
-  object DataSource5: TDataSource
-    DataSet = FDQuery4
-    Left = 672
-    Top = 320
+  object UniQuery2: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT PRIX_A FROM Achats WHERE '
+      
+        'Id_vehicule in(select Id_vehicule from VEHICULE where Model_v =:' +
+        'paramt02) ')
+    Active = True
+    Left = 552
+    Top = 504
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'paramt02'
+        Value = Null
+      end>
+  end
+  object UniQuery3: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT Prix_v FROM Ventes WHERE'
+      
+        ' Id_vehicule in(select Id_vehicule from VEHICULE where Model_v =' +
+        ':paramt03 )')
+    Active = True
+    Left = 720
+    Top = 494
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'paramt03'
+        Value = Null
+      end>
+  end
+  object UniQuery4: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT QTE_A FROM Achats WHERE '
+      
+        'Id_vehicule in(select Id_vehicule from VEHICULE where Model_v =:' +
+        'paramt04)')
+    Active = True
+    Left = 720
+    Top = 368
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'paramt04'
+        Value = Null
+      end>
   end
 end

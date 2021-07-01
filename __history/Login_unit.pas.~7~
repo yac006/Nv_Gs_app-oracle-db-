@@ -1,0 +1,31 @@
+unit Login_unit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Imaging.pngimage;
+
+type
+  TLogin_form = class(TForm)
+    Image1: TImage;
+    GroupBox1: TGroupBox;
+    Button1: TButton;
+    Edit2: TEdit;
+    Edit1: TEdit;
+    Image2: TImage;
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Login_form: TLogin_form;
+
+implementation
+
+{$R *.dfm}
+
+end.

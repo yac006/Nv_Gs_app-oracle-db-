@@ -3,7 +3,7 @@ object Journal_ventes: TJournal_ventes
   Top = 0
   Caption = 'Journal_ventes'
   ClientHeight = 536
-  ClientWidth = 680
+  ClientWidth = 675
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object Journal_ventes: TJournal_ventes
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
-    Left = 229
+    Left = 230
     Top = 8
     Width = 441
     Height = 247
@@ -23,10 +23,10 @@ object Journal_ventes: TJournal_ventes
     TabOrder = 0
     object DBGrid2: TDBGrid
       Left = 16
-      Top = 14
+      Top = 19
       Width = 409
       Height = 213
-      DataSource = DataSource1
+      DataSource = DataSrc_tab_ventes
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -35,34 +35,34 @@ object Journal_ventes: TJournal_ventes
       TitleFont.Style = []
       Columns = <
         item
+          Alignment = taCenter
+          ButtonStyle = cbsEllipsis
           Expanded = False
-          FieldName = 'ID'
-          Width = 95
+          FieldName = 'ID_VENTE'
+          Width = 120
           Visible = True
         end
         item
+          Alignment = taCenter
+          ButtonStyle = cbsEllipsis
           Expanded = False
-          FieldName = 'Client'
-          Width = 95
+          FieldName = 'ID_CLIENT'
+          Width = 120
           Visible = True
         end
         item
+          Alignment = taCenter
+          ButtonStyle = cbsEllipsis
           Expanded = False
-          FieldName = 'Date de vente'
-          Width = 95
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'PrixDeVente'
-          Width = 95
+          FieldName = 'DATE_V'
+          Width = 120
           Visible = True
         end>
     end
   end
   object GroupBox2: TGroupBox
-    Left = 231
-    Top = 260
+    Left = 230
+    Top = 261
     Width = 439
     Height = 265
     Caption = 'Les Articles'
@@ -72,10 +72,10 @@ object Journal_ventes: TJournal_ventes
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 14
-      Top = 24
+      Top = 20
       Width = 409
       Height = 225
-      DataSource = DataSource1
+      DataSource = DataSrc_tab_ventes
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -85,35 +85,29 @@ object Journal_ventes: TJournal_ventes
       Columns = <
         item
           Expanded = False
-          FieldName = 'Famille'
-          Width = 100
+          FieldName = 'ID_VEHICULE'
+          Width = 120
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Model'
-          Width = 100
+          FieldName = 'QTE_V'
+          Width = 120
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'PrixDeVente'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Qt'
-          Width = 100
+          FieldName = 'PRIX_V'
+          Width = 120
           Visible = True
         end>
     end
   end
   object Panel1: TPanel
-    Left = 7
-    Top = 14
+    Left = 8
+    Top = 8
     Width = 216
-    Height = 511
+    Height = 517
     Caption = 'Panel1'
     ParentBackground = False
     ShowCaption = False
@@ -127,7 +121,7 @@ object Journal_ventes: TJournal_ventes
       object Label1: TLabel
         Left = 16
         Top = 24
-        Width = 166
+        Width = 161
         Height = 22
         Caption = 'Journal de ventes'
         Font.Charset = ANSI_CHARSET
@@ -145,15 +139,24 @@ object Journal_ventes: TJournal_ventes
       Height = 225
       Caption = 'Clients'
       TabOrder = 1
-      object DBLookupComboBox1: TDBLookupComboBox
-        Left = 15
-        Top = 48
-        Width = 162
-        Height = 21
-        KeyField = 'Client'
-        ListField = 'Client'
-        ListSource = DataSource1
+      object Button3: TButton
+        Left = 42
+        Top = 102
+        Width = 95
+        Height = 25
+        Caption = 'Filtrer'
         TabOrder = 0
+        OnClick = Button3Click
+      end
+      object DBLookupComboBox1: TDBLookupComboBox
+        Left = 16
+        Top = 56
+        Width = 161
+        Height = 21
+        KeyField = 'NOM_C'
+        ListField = 'NOM_C'
+        ListSource = DataSrc_table_clients
+        TabOrder = 1
       end
     end
     object Button2: TButton
@@ -166,43 +169,28 @@ object Journal_ventes: TJournal_ventes
       OnClick = Button2Click
     end
   end
-  object Button1: TButton
-    Left = 71
-    Top = 235
-    Width = 83
-    Height = 25
-    Caption = 'Refresh'
-    TabOrder = 3
-    OnClick = Button1Click
+  object DataSrc_table_clients: TDataSource
+    DataSet = Client_fourniseur.UniTable1
+    Left = 140
+    Top = 398
   end
-  object DataSource1: TDataSource
-    DataSet = ADOTable1_ventes
-    Left = 710
-    Top = 152
+  object DataSrc_tab_ventes: TDataSource
+    DataSet = Ventes.UniTable1
+    Left = 696
+    Top = 72
   end
-  object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Gs' +
-      '_app\Database1.mdb;Mode=Share Deny None;Persist Security Info=Fa' +
-      'lse;Jet OLEDB:System database="";Jet OLEDB:Registry Path="";Jet ' +
-      'OLEDB:Database Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Dat' +
-      'abase Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLE' +
-      'DB:Global Bulk Transactions=1;Jet OLEDB:New Database Password=""' +
-      ';Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Databa' +
-      'se=False;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:' +
-      'Compact Without Replica Repair=False;Jet OLEDB:SFP=False'
-    Mode = cmShareDenyNone
-    Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 710
-    Top = 32
-  end
-  object ADOTable1_ventes: TADOTable
+  object UniQuery1: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'select id_client from clients where Nom_c =:prm ;')
     Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Ventes'
-    Left = 709
-    Top = 95
+    Left = 40
+    Top = 384
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'prm'
+        Value = Null
+      end>
   end
 end

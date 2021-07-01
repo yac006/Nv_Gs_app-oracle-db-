@@ -11,18 +11,19 @@ uses
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.DBCtrls, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, FireDAC.UI.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef,
-  Data.Win.ADODB;
+  Data.Win.ADODB, Vcl.Imaging.jpeg;
 
 type
   TPrincipale = class(TForm)
     Button1: TButton;
     Panel6: TPanel;
     Button2: TButton;
-    Panel3: TPanel;
-    Panel5: TPanel;
-    Panel4: TPanel;
-    Panel2: TPanel;
-    Panel1: TPanel;
+    GroupBox3: TGroupBox;
+    GroupBox2: TGroupBox;
+    Edit1: TEdit;
+    BitBtn1: TBitBtn;
+    DBGrid1: TDBGrid;
+    Image1: TImage;
     Button3: TButton;
     Panel7: TPanel;
     RadioGroup1: TRadioGroup;
@@ -30,36 +31,28 @@ type
     RadioButton2: TRadioButton;
     RadioButton3: TRadioButton;
     GroupBox1: TGroupBox;
-    Panel8_logo: TPanel;
-    Label1: TLabel;
-    Image1: TImage;
     Button4: TButton;
+    Bevel1: TBevel;
+    Bevel3: TBevel;
+    Bevel4: TBevel;
+    Bevel5: TBevel;
+    Bevel6: TBevel;
+    Label2: TLabel;
+    ImageList2: TImageList;
+    Bevel2: TBevel;
+    Button5: TButton;
+    Button6: TButton;
+    ImageList3: TImageList;
+    Button7: TButton;
+    ImageList4: TImageList;
+    Button8: TButton;
+    Button9: TButton;
+    ImageList5: TImageList;
+    ImageList6: TImageList;
     ImageList1: TImageList;
-    ADOTable1: TADOTable;
-    ADOConnection1: TADOConnection;
-    DataSource1: TDataSource;
-    GroupBox3: TGroupBox;
-    GroupBox2: TGroupBox;
-    Edit1: TEdit;
-    BitBtn1: TBitBtn;
-    DBGrid1: TDBGrid;
+    RadioButton4: TRadioButton;
     procedure Panel2Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
-    procedure Panel5MouseMoe(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
-    procedure Panel5MouseLeave(Sender: TObject);
-    procedure Panel4MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
-    procedure Panel4MouseLeave(Sender: TObject);
-    procedure Panel1MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
-    procedure Panel1MouseLeave(Sender: TObject);
-    procedure Panel2MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
-    procedure Panel2MouseLeave(Sender: TObject);
-    procedure Panel3MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
-    procedure Panel3MouseLeave(Sender: TObject);
     procedure Panel4Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
@@ -68,10 +61,32 @@ type
     procedure RadioButton1Click(Sender: TObject);
     procedure RadioButton2Click(Sender: TObject);
     procedure RadioButton3Click(Sender: TObject);
+    procedure Label2MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Label2MouseLeave(Sender: TObject);
+    procedure Button5MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Button5MouseLeave(Sender: TObject);
+    procedure Button6MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Button6MouseLeave(Sender: TObject);
+    procedure Button7MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Button7MouseLeave(Sender: TObject);
+    procedure Button8MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Button8MouseLeave(Sender: TObject);
+    procedure Button9MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Button9MouseLeave(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
+    procedure RadioButton4Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -85,67 +100,142 @@ implementation
 
 {$R *.dfm}
 
-uses Unit2, Unit3, Unit5, Unit4, Unit6;
-
-procedure TPrincipale.BitBtn1Click(Sender: TObject);
-begin
-   ADOTable1.Close;
-   ADOTable1.Open;
-end;
+uses Unit2, Unit3, Unit5, Unit4, Unit6, Unit7, Unit8, Unit9, Unit10;
 
 procedure TPrincipale.Button1Click(Sender: TObject);
 begin
  Panel6.Visible:=true;
- Principale.Width:=826;
+ Principale.Width:= 989;
 end;
 
 procedure TPrincipale.Button2Click(Sender: TObject);
 begin
   Panel6.Visible:=False;
-  Principale.Width:=623;
+  Principale.Width:=774;
 end;
 
 procedure TPrincipale.Button3Click(Sender: TObject);
 begin
-    Panel8_logo.Visible:= false;
-    Panel7.Visible:= true;
+   panel7.Visible := true;
 end;
 
 procedure TPrincipale.Button4Click(Sender: TObject);
 begin
-      Panel8_logo.Visible:= true;
-      Panel7.Visible:= false;
+   Panel7.Visible:=False;
 end;
 
-procedure TPrincipale.Edit1Change(Sender: TObject);
+procedure TPrincipale.Button5Click(Sender: TObject);
 begin
-    ADOTable1.Filtered:= False;
-    if Edit1.Text = '' then
-          Exit;
-    //ADOTable1.Filter:= 'Model LIKE '+'('+''''+quotedstr(edit1.Text+'*')+'%'+''''+')' ;
-    ADOTable1.Filter:= 'Model LIKE '+quotedstr(edit1.Text+'*');
-    ADOTable1.Filtered:= true;
+   Achats.Show;
+   Principale.Hide;
+end;
+
+procedure TPrincipale.Button5MouseLeave(Sender: TObject);
+begin
+   Button5.Height:= 76;
+   Button5.Width:= 135;
+end;
+
+procedure TPrincipale.Button5MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+   Button5.Height:= 79;
+   Button5.Width:= 138;
+end;
+
+procedure TPrincipale.Button6Click(Sender: TObject);
+begin
+    Ventes.Show;
+    Principale.Hide;
+end;
+
+procedure TPrincipale.Button6MouseLeave(Sender: TObject);
+begin
+   Button6.Height:= 76;
+   Button6.Width:= 104;
+end;
+
+procedure TPrincipale.Button6MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+   Button6.Height:= 79;
+   Button6.Width:= 107;
+end;
+
+procedure TPrincipale.Button7Click(Sender: TObject);
+begin
+   Client_fourniseur.Show;
+   Principale.Hide;
+end;
+
+procedure TPrincipale.Button7MouseLeave(Sender: TObject);
+begin
+   Button7.Height:= 76;
+   Button7.Width:= 135;
+end;
+
+procedure TPrincipale.Button7MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+      Button7.Height:= 79;
+      Button7.Width:= 138;
+end;
+
+procedure TPrincipale.Button8Click(Sender: TObject);
+begin
+  Article.Show;
+  Principale.Hide;
+end;
+
+procedure TPrincipale.Button8MouseLeave(Sender: TObject);
+begin
+    Button8.Height:= 76;
+    Button8.Width:= 100;
+end;
+
+procedure TPrincipale.Button8MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+      Button8.Height:= 79;
+      Button8.Width:= 103;
+end;
+
+procedure TPrincipale.Button9Click(Sender: TObject);
+begin
+    Stock.Show;
+    Principale.Hide;
+end;
+
+procedure TPrincipale.Button9MouseLeave(Sender: TObject);
+begin
+     Button9.Height:= 209;
+     Button9.Width:= 93;
+
+end;
+
+procedure TPrincipale.Button9MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+     Button9.Height:= 212;
+     Button9.Width:= 96;
+end;
+
+procedure TPrincipale.Label2MouseLeave(Sender: TObject);
+begin
+     Label2.Transparent:= true ;
+end;
+
+procedure TPrincipale.Label2MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+    Label2.Transparent:= false ;
 end;
 
 procedure TPrincipale.Panel1Click(Sender: TObject);
 begin
  stock.show;
  Principale.Hide;
-end;
 
-procedure TPrincipale.Panel1MouseLeave(Sender: TObject);
-begin
-  Panel1.Top:=209;
-  Panel1.Left:=431;
-  Panel1.Color:=clBtnFace;
-end;
-
-procedure TPrincipale.Panel1MouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-begin
-  Panel1.Top:=213;
-  Panel1.Left:=435;
-  Panel1.Color:=$00DBDBDB;
 end;
 
 procedure TPrincipale.Panel2Click(Sender: TObject);
@@ -154,40 +244,10 @@ begin
   Principale.Hide;
 end;
 
-procedure TPrincipale.Panel2MouseLeave(Sender: TObject);
-begin
-  Panel2.Top:=336;
-  Panel2.Left:=288;
-  Panel2.Color:=clBtnFace;
-end;
-
-procedure TPrincipale.Panel2MouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-begin
-  Panel2.Top:=340;
-  Panel2.Left:=292;
-  Panel2.Color:=$00DBDBDB;
-end;
-
 procedure TPrincipale.Panel3Click(Sender: TObject);
 begin
   Client_fourniseur.Show;
   Principale.Hide;
-end;
-
-procedure TPrincipale.Panel3MouseLeave(Sender: TObject);
-begin
-  Panel3.Top:=336;
-  Panel3.Left:=56;
-  Panel3.Color:=clBtnFace;
-end;
-
-procedure TPrincipale.Panel3MouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-begin
-  Panel3.Top:=340;
-  Panel3.Left:=60;
-  Panel3.Color:=$00DBDBDB;
 end;
 
 procedure TPrincipale.Panel4Click(Sender: TObject);
@@ -196,56 +256,34 @@ begin
  Principale.Hide;
 end;
 
-procedure TPrincipale.Panel4MouseLeave(Sender: TObject);
-begin
-  Panel4.Top:=209;
-  Panel4.Left:=231;
-  Panel4.Color:=clBtnFace;
-end;
-
-procedure TPrincipale.Panel4MouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-begin
-  Panel4.Top:=213;
-  Panel4.Left:=234;
-  Panel4.Color:=$00DBDBDB;
-end;
-
 procedure TPrincipale.Panel5Click(Sender: TObject);
 begin
  Ventes.Show;
  Principale.Hide;
 end;
 
-procedure TPrincipale.Panel5MouseLeave(Sender: TObject);
-begin
-  Panel5.Top:=209;
-  Panel5.Left:=56;
-  Panel5.Color:=clBtnFace;
-end;
-
-procedure TPrincipale.Panel5MouseMoe(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-begin
-  Panel5.Top:=213;
-  Panel5.Left:=60;
-  Panel5.Color:=$00DBDBDB;
-end;
-
 procedure TPrincipale.RadioButton1Click(Sender: TObject);
 begin
     Principale.Color:= $00B79220;
+    Image1.Visible := false ;
 end;
 
 procedure TPrincipale.RadioButton2Click(Sender: TObject);
 begin
     Principale.Color:= $000AB0FA ;
+    Image1.Visible := false ;
 
 end;
 
 procedure TPrincipale.RadioButton3Click(Sender: TObject);
 begin
      Principale.Color:= $00E77C6D ;
+     Image1.Visible := false ;
+end;
+
+procedure TPrincipale.RadioButton4Click(Sender: TObject);
+begin
+   Image1.Visible := true;
 end;
 
 end.

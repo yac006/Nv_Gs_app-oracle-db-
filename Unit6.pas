@@ -99,17 +99,17 @@ end;
 
 procedure TStock.Panel4MouseLeave(Sender: TObject);
 begin
-     Panel4.Left:= 256;
-     Panel4.Top:= 342;
+     Panel4.width:= 360;
+     Panel4.Height:= 57;
      panel4.Color:= clBtnFace;
 end;
 
 procedure TStock.Panel4MouseMove(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
-     Panel4.Left:= 257;
-     Panel4.Top:= 341;
-     panel4.Color:=clGray;
+     Panel4.width:= 363;
+     Panel4.Height:= 60;
+     panel4.Color:=$00C7C7C7;
 end;
 
 end.

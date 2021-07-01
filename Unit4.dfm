@@ -1,8 +1,8 @@
-﻿object Achats: TAchats
+object Achats: TAchats
   Left = 0
   Top = 154
   Caption = 'Achats'
-  ClientHeight = 550
+  ClientHeight = 548
   ClientWidth = 871
   Color = 49087
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@
     TabOrder = 0
     object Button3: TButton
       Left = 16
-      Top = 144
+      Top = 142
       Width = 121
       Height = 22
       Caption = 'Calculer bnf'
@@ -36,14 +36,11 @@
       Height = 49
       Caption = 'Prix d'#39'achat'
       TabOrder = 1
-      object DBEdit2: TDBEdit
-        Left = 11
+      object Edit2: TEdit
+        Left = 10
         Top = 17
-        Width = 100
+        Width = 102
         Height = 21
-        DataField = 'Prixachat'
-        DataSource = DataSource1
-        Enabled = False
         TabOrder = 0
       end
     end
@@ -54,14 +51,11 @@
       Height = 47
       Caption = 'Prix de vente'
       TabOrder = 2
-      object DBEdit3: TDBEdit
-        Left = 11
+      object Edit3: TEdit
+        Left = 10
         Top = 17
-        Width = 100
+        Width = 101
         Height = 21
-        DataField = 'PrixDeVente'
-        DataSource = DataSource1
-        Enabled = False
         TabOrder = 0
       end
     end
@@ -85,14 +79,14 @@
     Left = 8
     Top = 248
     Width = 851
-    Height = 272
+    Height = 267
     TabOrder = 1
     object DBGrid1: TDBGrid
-      Left = 17
-      Top = 22
-      Width = 819
-      Height = 234
-      DataSource = DataSource1
+      Left = 11
+      Top = 14
+      Width = 829
+      Height = 239
+      DataSource = UniDataSource3
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -101,51 +95,44 @@
       TitleFont.Style = []
       Columns = <
         item
+          Alignment = taCenter
           Expanded = False
-          FieldName = 'Famille'
-          Width = 99
+          FieldName = 'ID_ACHATS'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'ID_VEHICULE'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'ID_FOURNISSEUR'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'QTE_A'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taRightJustify
+          Expanded = False
+          FieldName = 'DATE_A'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Model'
-          Width = 99
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Ann'#233'e'
-          Width = 99
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Fourniseur'
-          Width = 99
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Qttacheter'
-          Width = 99
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Datedacheter'
-          Width = 99
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Prixachat'
-          Width = 99
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'PrixDeVente'
-          Width = 99
+          FieldName = 'PRIX_A'
+          Width = 100
           Visible = True
         end>
     end
@@ -164,21 +151,15 @@
       Caption = 'Famille'
       TabOrder = 0
       object DBLookupComboBox1: TDBLookupComboBox
-        Left = 8
-        Top = 17
+        Left = 9
+        Top = 19
         Width = 145
         Height = 21
-        Hint = ' '
-        HelpType = htKeyword
-        DataField = 'Famille'
-        DataSource = DataSource1
         Enabled = False
-        KeyField = 'Famille'
-        ListField = 'Famille'
-        ListSource = DataSource2
+        KeyField = 'FAMILLE_V'
+        ListField = 'FAMILLE_V'
+        ListSource = DataSource_test
         TabOrder = 0
-        OnClick = DBLookupComboBox1Click
-        OnMouseMove = DBLookupComboBox1MouseMove
       end
     end
     object GroupBox2: TGroupBox
@@ -193,12 +174,10 @@
         Top = 18
         Width = 145
         Height = 21
-        DataField = 'Model'
-        DataSource = DataSource1
         Enabled = False
-        KeyField = 'Model'
-        ListField = 'Model'
-        ListSource = DataSource2
+        KeyField = 'MODEL_V'
+        ListField = 'MODEL_V'
+        ListSource = UniDataSource1
         TabOrder = 0
       end
     end
@@ -207,7 +186,7 @@
       Top = 19
       Width = 191
       Height = 51
-      Caption = 'Fourniseur'
+      Caption = 'Fourniseur '
       TabOrder = 2
       object Button7: TButton
         Left = 158
@@ -220,27 +199,16 @@
         TabOrder = 0
         OnClick = Button7Click
       end
-      object DBEdit1: TDBEdit
-        Left = 28
-        Top = 17
-        Width = 100
-        Height = 21
-        DataField = 'NomCmplFrs'
-        DataSource = DataSource1
-        TabOrder = 1
-      end
       object DBLookupComboBox3: TDBLookupComboBox
-        Left = 12
-        Top = 18
+        Left = 8
+        Top = 19
         Width = 145
         Height = 21
-        DataField = 'Fourniseur'
-        DataSource = DataSource1
         Enabled = False
-        KeyField = 'NomComplet'
-        ListField = 'NomComplet'
-        ListSource = DataSource3
-        TabOrder = 2
+        KeyField = 'NOM_F'
+        ListField = 'NOM_F'
+        ListSource = UniDataSource2
+        TabOrder = 1
       end
     end
     object GroupBox4: TGroupBox
@@ -251,13 +219,12 @@
       Caption = 'Qte acheter'
       TabOrder = 3
       object DBEdit4: TDBEdit
-        Left = 11
+        Left = 16
         Top = 18
-        Width = 140
+        Width = 134
         Height = 21
-        DataField = 'Qttacheter'
-        DataSource = DataSource1
-        Enabled = False
+        DataField = 'QTE_A'
+        DataSource = UniDataSource3
         TabOrder = 0
       end
     end
@@ -269,17 +236,16 @@
       Caption = 'Date d'#39'acheter'
       TabOrder = 4
       object DBEdit5: TDBEdit
-        Left = 34
-        Top = 17
-        Width = 120
+        Left = 12
+        Top = 18
+        Width = 179
         Height = 21
-        DataField = 'Datedacheter'
-        DataSource = DataSource1
-        Enabled = False
+        DataField = 'DATE_A'
+        DataSource = UniDataSource3
         TabOrder = 0
       end
       object DateTimePicker1: TDateTimePicker
-        Left = 14
+        Left = 12
         Top = 18
         Width = 179
         Height = 21
@@ -358,7 +324,7 @@
       Caption = ' '
       TabOrder = 7
       object Button4: TButton
-        Left = 19
+        Left = 25
         Top = 22
         Width = 139
         Height = 25
@@ -371,7 +337,7 @@
         Top = 22
         Width = 75
         Height = 25
-        Caption = 'Refresh'
+        Caption = 'Actualiser'
         TabOrder = 1
         OnClick = Button8Click
       end
@@ -381,22 +347,22 @@
       Top = 19
       Width = 174
       Height = 51
-      Caption = 'Ann'#233'e'
+      Caption = 'Prix d'#39'achat '
       TabOrder = 8
-      object DBEdit6: TDBEdit
-        Left = 13
-        Top = 18
-        Width = 149
+      object DBEdit7: TDBEdit
+        Left = 16
+        Top = 19
+        Width = 144
         Height = 21
-        DataField = 'Ann'#233'e'
-        DataSource = DataSource1
+        DataField = 'PRIX_A'
+        DataSource = UniDataSource3
         TabOrder = 0
       end
     end
   end
   object Button1: TButton
     Left = 8
-    Top = 525
+    Top = 522
     Width = 40
     Height = 18
     Caption = '<- Back'
@@ -409,99 +375,58 @@
     TabOrder = 3
     OnClick = Button1Click
   end
-  object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Gs_app\Database1' +
-      '.mdb;Persist Security Info=False'
-    Mode = cmShareDenyNone
-    Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 80
-    Top = 536
-  end
-  object DataSource1: TDataSource
-    DataSet = ADOTable1
-    Left = 312
-    Top = 536
-  end
-  object ADOTable2: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Article'
-    Left = 184
-    Top = 536
-    object ADOTable2ID: TAutoIncField
-      FieldName = 'ID'
-      ReadOnly = True
+  object GroupBox15: TGroupBox
+    Left = 136
+    Top = 584
+    Width = 418
+    Height = 142
+    TabOrder = 4
+    object DBEdit6: TDBEdit
+      Left = 247
+      Top = 87
+      Width = 134
+      Height = 21
+      DataField = 'ID_VEHICULE'
+      DataSource = UniDataSource3
+      TabOrder = 0
+      Visible = False
     end
-    object ADOTable2Famille: TWideStringField
-      FieldName = 'Famille'
-      Size = 255
+    object DBEdit_dat_src_qry01: TDBEdit
+      Left = 266
+      Top = 95
+      Width = 121
+      Height = 21
+      DataField = 'ID_VEHICULE'
+      DataSource = UniDataSource_qry01
+      TabOrder = 1
+      Visible = False
     end
-    object ADOTable2Model: TWideStringField
-      FieldName = 'Model'
-      Size = 255
+    object DBEdit8: TDBEdit
+      Left = 241
+      Top = 23
+      Width = 134
+      Height = 21
+      DataField = 'ID_FOURNISSEUR'
+      DataSource = UniDataSource3
+      TabOrder = 2
+      Visible = False
     end
-    object ADOTable2parixdachat: TWideStringField
-      FieldName = 'parix d achat'
-      Size = 255
+    object DBEdit_dat_src_qry02: TDBEdit
+      Left = 266
+      Top = 31
+      Width = 121
+      Height = 21
+      DataField = 'ID_FOURNISSEUR'
+      DataSource = UniDataSource_qry02
+      TabOrder = 3
+      Visible = False
     end
-    object ADOTable2prixdevente: TWideStringField
-      FieldName = 'prix de vente'
-      Size = 255
-    end
-  end
-  object DataSource2: TDataSource
-    DataSet = ADOTable2
-    Left = 360
-    Top = 536
-  end
-  object ADOTable3: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Fourniseurs'
-    Left = 240
-    Top = 536
-    object ADOTable3ID: TAutoIncField
-      FieldName = 'ID'
-      ReadOnly = True
-    end
-    object ADOTable3Nom: TWideStringField
-      FieldName = 'Nom'
-      Size = 255
-    end
-    object ADOTable3Prénom: TWideStringField
-      FieldName = 'Pr'#233'nom'
-      Size = 255
-    end
-    object ADOTable3NomComplet: TWideStringField
-      FieldName = 'NomComplet'
-      Size = 255
-    end
-    object ADOTable3Address: TWideStringField
-      FieldName = 'Address'
-      Size = 255
-    end
-    object ADOTable3Télé: TIntegerField
-      FieldName = 'T'#233'l'#233
-    end
-    object ADOTable3Email: TWideStringField
-      FieldName = 'Email'
-      Size = 255
-    end
-  end
-  object DataSource3: TDataSource
-    DataSet = ADOTable3
-    Left = 408
-    Top = 536
   end
   object ImageList1: TImageList
-    Left = 464
+    Left = 536
     Top = 528
     Bitmap = {
-      494C010101009800D40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101009800040110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000FEFEFE02FCFC
       FC08FAFAFA0EF7F7F716F5F5F51CF5F5F51CF5F5F51CF5F5F51CF9F9F90FFAFA
@@ -643,10 +568,10 @@
   object ImageList2: TImageList
     Height = 50
     Width = 50
-    Left = 520
+    Left = 592
     Top = 528
     Bitmap = {
-      494C0101010014004C0032003200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010014007C0032003200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000320000000100200000000000409C
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000000000FEFEFD03FEFEFD03FEFE
@@ -1951,10 +1876,10 @@
     BkColor = 49087
     Height = 50
     Width = 50
-    Left = 584
+    Left = 656
     Top = 528
     Bitmap = {
-      494C010101000800600032003200BFBF0000FF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000800900032003200BFBF0000FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000320000000100200000000000409C
       0000000000000000000000000000000000000000000000000000010101020303
       0304060606090808080D0D0D0D140F0F0F171515152119191927191919271C1C
@@ -3254,52 +3179,112 @@
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000}
   end
-  object ADOTable1: TADOTable
+  object UniTable1: TUniTable
+    TableName = 'VEHICULE'
+    Connection = Article.UniConnection1
     Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Achats'
-    Left = 136
-    Top = 528
-    object ADOTable1ID: TAutoIncField
-      FieldName = 'ID'
-      ReadOnly = True
+    Left = 80
+    Top = 536
+  end
+  object UniDataSource1: TUniDataSource
+    DataSet = UniTable1
+    Left = 279
+    Top = 536
+  end
+  object UniDataSource2: TUniDataSource
+    DataSet = UniTable2
+    Left = 360
+    Top = 536
+  end
+  object UniDataSource3: TUniDataSource
+    DataSet = UniTable3
+    Left = 448
+    Top = 536
+  end
+  object UniTable2: TUniTable
+    TableName = 'FOURNISSEUR'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 144
+    Top = 536
+  end
+  object UniTable3: TUniTable
+    TableName = 'ACHATS'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 200
+    Top = 536
+    object UniTable3ID_ACHATS: TFloatField
+      FieldName = 'ID_ACHATS'
+      Required = True
     end
-    object ADOTable1Famille: TWideStringField
-      FieldName = 'Famille'
-      Size = 255
+    object UniTable3ID_VEHICULE: TFloatField
+      FieldName = 'ID_VEHICULE'
+      Required = True
     end
-    object ADOTable1Model: TWideStringField
-      FieldName = 'Model'
-      Size = 255
+    object UniTable3ID_FOURNISSEUR: TFloatField
+      FieldName = 'ID_FOURNISSEUR'
+      Required = True
     end
-    object ADOTable1Fourniseur: TWideStringField
-      FieldName = 'Fourniseur'
-      Size = 255
+    object UniTable3QTE_A: TFloatField
+      FieldName = 'QTE_A'
     end
-    object ADOTable1Qttacheter: TWideStringField
-      FieldName = 'Qttacheter'
-      Size = 255
+    object UniTable3DATE_A: TStringField
+      FieldName = 'DATE_A'
+      Size = 30
     end
-    object ADOTable1Datedacheter: TWideStringField
-      FieldName = 'Datedacheter'
-      Size = 255
+    object UniTable3PRIX_A: TFloatField
+      FieldName = 'PRIX_A'
     end
-    object ADOTable1Prixachat: TWideStringField
-      FieldName = 'Prixachat'
-      Size = 255
-    end
-    object ADOTable1PrixDeVente: TWideStringField
-      FieldName = 'PrixDeVente'
-      Size = 255
-    end
-    object ADOTable1NomCmplFrs: TWideStringField
-      FieldName = 'NomCmplFrs'
-      Size = 255
-    end
-    object ADOTable1Année: TWideStringField
-      FieldName = 'Ann'#233'e'
-      Size = 255
-    end
+  end
+  object UniTable_test: TUniTable
+    TableName = 'VEHICULE'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 64
+    Top = 600
+  end
+  object DataSource_test: TDataSource
+    DataSet = UniTable_test
+    Left = 64
+    Top = 672
+  end
+  object UniQuery1_get_id_veh: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT ID_VEHICULE FROM VEHICULE WHERE Model_v = :parm_01')
+    Active = True
+    Left = 184
+    Top = 608
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'parm_01'
+        Value = Null
+      end>
+  end
+  object UniQuery2_get_id_fourni: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT ID_FOURNISSEUR FROM FOURNISSEUR WHERE Nom_f = :parm_02')
+    Active = True
+    Left = 184
+    Top = 664
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'parm_02'
+        Value = Null
+      end>
+  end
+  object UniDataSource_qry01: TUniDataSource
+    DataSet = UniQuery1_get_id_veh
+    Left = 312
+    Top = 608
+  end
+  object UniDataSource_qry02: TUniDataSource
+    DataSet = UniQuery2_get_id_fourni
+    Left = 312
+    Top = 664
   end
 end

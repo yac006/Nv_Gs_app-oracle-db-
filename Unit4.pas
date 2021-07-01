@@ -6,12 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask,
   Vcl.DBCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Data.Win.ADODB, Vcl.ComCtrls,
-  Vcl.Buttons, Vcl.ImgList;
+  Vcl.Buttons, Vcl.ImgList, DBAccess, Uni, MemDS;
 
 type
   TAchats = class(TForm)
-    ADOConnection1: TADOConnection;
-    DataSource1: TDataSource;
     GroupBox8: TGroupBox;
     Button3: TButton;
     GroupBox6: TGroupBox;
@@ -19,18 +17,8 @@ type
     Edit1: TEdit;
     GroupBox11: TGroupBox;
     DBGrid1: TDBGrid;
-    ADOTable2: TADOTable;
-    DataSource2: TDataSource;
-    ADOTable3: TADOTable;
-    DataSource3: TDataSource;
-    ADOTable2ID: TAutoIncField;
-    ADOTable2Famille: TWideStringField;
-    ADOTable2Model: TWideStringField;
-    ADOTable2parixdachat: TWideStringField;
-    ADOTable2prixdevente: TWideStringField;
     GroupBox10: TGroupBox;
     GroupBox1: TGroupBox;
-    DBLookupComboBox1: TDBLookupComboBox;
     GroupBox2: TGroupBox;
     GroupBox3: TGroupBox;
     GroupBox4: TGroupBox;
@@ -44,14 +32,6 @@ type
     Button7: TButton;
     ImageList2: TImageList;
     ImageList3: TImageList;
-    ADOTable3ID: TAutoIncField;
-    ADOTable3Nom: TWideStringField;
-    ADOTable3Prénom: TWideStringField;
-    ADOTable3Address: TWideStringField;
-    ADOTable3Télé: TIntegerField;
-    ADOTable3Email: TWideStringField;
-    ADOTable3NomComplet: TWideStringField;
-    ADOTable1: TADOTable;
     GroupBox12: TGroupBox;
     Button2: TButton;
     Label1: TLabel;
@@ -59,25 +39,38 @@ type
     Button4: TButton;
     Button8: TButton;
     Button9: TButton;
-    ADOTable1ID: TAutoIncField;
-    ADOTable1Famille: TWideStringField;
-    ADOTable1Model: TWideStringField;
-    ADOTable1Fourniseur: TWideStringField;
-    ADOTable1Qttacheter: TWideStringField;
-    ADOTable1Datedacheter: TWideStringField;
-    ADOTable1Prixachat: TWideStringField;
-    ADOTable1PrixDeVente: TWideStringField;
-    ADOTable1NomCmplFrs: TWideStringField;
     GroupBox14: TGroupBox;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
-    DateTimePicker1: TDateTimePicker;
-    DBEdit1: TDBEdit;
     DBLookupComboBox3: TDBLookupComboBox;
-    ADOTable1Année: TWideStringField;
+    UniTable1: TUniTable;
+    UniDataSource1: TUniDataSource;
+    UniDataSource2: TUniDataSource;
+    UniDataSource3: TUniDataSource;
+    UniTable2: TUniTable;
+    UniTable3: TUniTable;
+    UniTable3ID_ACHATS: TFloatField;
+    UniTable3ID_VEHICULE: TFloatField;
+    UniTable3ID_FOURNISSEUR: TFloatField;
+    UniTable3QTE_A: TFloatField;
+    UniTable3DATE_A: TStringField;
+    UniTable3PRIX_A: TFloatField;
+    DBEdit7: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit4: TDBEdit;
+    DateTimePicker1: TDateTimePicker;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    UniTable_test: TUniTable;
+    DataSource_test: TDataSource;
+    GroupBox15: TGroupBox;
     DBEdit6: TDBEdit;
+    DBEdit_dat_src_qry01: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit_dat_src_qry02: TDBEdit;
+    UniQuery1_get_id_veh: TUniQuery;
+    UniQuery2_get_id_fourni: TUniQuery;
+    UniDataSource_qry01: TUniDataSource;
+    UniDataSource_qry02: TUniDataSource;
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
@@ -103,7 +96,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit2, Unit3, Unit5;
+uses Unit1, Unit2, Unit3, Unit5, Unit7;
 
 procedure TAchats.Button1Click(Sender: TObject);
 begin
@@ -120,7 +113,7 @@ procedure TAchats.Button3Click(Sender: TObject);
 begin
 
     //CALCULE BENEFICE(PRIX DE VENTS - PRIX D ACHATS)
-    Edit1.Text:='Bnf : ' + IntToStr(strtoint(DBEdit3.Text) - strtoint(DBEdit2.Text));
+    Edit1.Text:='Bnf : ' + IntToStr(strtoint(Edit3.Text) - strtoint(Edit2.Text));
 
 
 
@@ -130,7 +123,7 @@ end;
 procedure TAchats.Button4Click(Sender: TObject);
 begin
      //Ajouter un recod en dbgrid
-     ADOTable1.Append;
+     UniTable3.Append;
 
      //ACTIVATION DES CHAMPS D ENTREE  (Dblookupcombobox , Dbedits ....)
      DBLookupComboBox1.Enabled:=true;
@@ -138,9 +131,7 @@ begin
      DBLookupComboBox3.Enabled:=true;
 
      DBEdit4.Enabled:=true;
-     DBEdit1.Enabled:=true;
-     DBEdit2.Enabled:=true;
-     DBEdit3.Enabled:=true;
+    
 
      DateTimePicker1.Enabled:=true;
 
@@ -148,12 +139,12 @@ end;
 
 procedure TAchats.Button5Click(Sender: TObject);
 begin
-     ADOTable1.Edit;
+     UniTable3.Edit;
 end;
 
 procedure TAchats.Button6Click(Sender: TObject);
 begin
-    ADOTable1.Delete;
+  UniTable3.Delete;
 end;
 
 procedure TAchats.Button7Click(Sender: TObject);
@@ -163,27 +154,49 @@ end;
 
 procedure TAchats.Button8Click(Sender: TObject);
 begin
-    ADOTable1.Close;
-    ADOTable1.Open;
+    UniTable1.Close;
+    UniTable1.Open;
 
-    ADOTable2.Close;
-    ADOTable2.Open;
+    UniTable2.Close;
+    UniTable2.Open;
 
-    ADOTable3.Close;
-    ADOTable3.Open;
+    UniTable3.Close;
+    UniTable3.Open;
 
+    UniTable_test.Close;
+    UniTable_test.Open;
+
+    UniQuery1_get_id_veh.Active := false;
+    UniQuery1_get_id_veh.Active := true;
+
+    UniQuery2_get_id_fourni.Active := false;
+    UniQuery2_get_id_fourni.Active := true;
+   
 end;
 
 procedure TAchats.Button9Click(Sender: TObject);
 begin
-    //AFFECTATION DU VALEUR DE DATETIMEPICKER1 AU DBEDIT7
+    //Affecter des valeurs pour les paramètres des requetes sql
+    UniQuery1_get_id_veh.Close;
+    UniQuery1_get_id_veh.ParamByName('parm_01').AsString := DBLookupComboBox2.Text ;
+    UniQuery1_get_id_veh.Open;
+
+    UniQuery2_get_id_fourni.Close;
+    UniQuery2_get_id_fourni.ParamByName('parm_02').AsString := DBLookupComboBox3.Text ;
+    UniQuery2_get_id_fourni.Open;
+    //Affecter les resultas des requetes sql pour les champs d'entrée de la table(Achats)
+    DBEdit6.text :=  DBEdit_dat_src_qry01.text ;
+    DBEdit8.text :=  DBEdit_dat_src_qry02.text ;
+
+    //Affecter la valeur de champ(prix d'achat) pour DBEdit2
+     Edit2.Text := DBEdit7.Text;
+
+    //AFFECTATION DU VALEUR DE DATETIMEPICKER1 AU champ d'entrer date table(Achats)
     DBEdit5.Text:= DateToStr(DateTimePicker1.Date);
 
-     //////////
-    DBEdit1.Text:= DBLookupComboBox3.Text;
 
-    //SAVE DATA IN DBGRID
-    ADOTable1.Post;
+    //SAVE DATA IN TABLE(Achats)
+    UniTable3.Post;
     ShowMessage('Les données a été enregistrées avec succès ');
 end;
 

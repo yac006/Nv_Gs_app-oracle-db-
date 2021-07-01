@@ -1,8 +1,8 @@
-﻿object Ventes: TVentes
+object Ventes: TVentes
   Left = 0
   Top = 0
   Caption = 'Ventes'
-  ClientHeight = 542
+  ClientHeight = 557
   ClientWidth = 895
   Color = 2134015
   Font.Charset = DEFAULT_CHARSET
@@ -136,18 +136,18 @@
       Top = 35
       Width = 133
       Height = 21
-      DataField = 'Qttacheter'
-      DataSource = DataSource4
+      DataField = 'QTE_A'
+      DataSource = Data_Src_qry_qte_achats
       ReadOnly = True
       TabOrder = 4
     end
     object DBEdit2: TDBEdit
       Left = 49
       Top = 62
-      Width = 117
+      Width = 133
       Height = 21
-      DataField = 'PrixDeVente'
-      DataSource = DataSource1
+      DataField = 'PRIX_V'
+      DataSource = UniDataSource1
       TabOrder = 5
     end
     object DBEdit_data_Sr5: TDBEdit
@@ -155,8 +155,8 @@
       Top = 62
       Width = 133
       Height = 21
-      DataField = 'PrixDeVente'
-      DataSource = DataSource5
+      DataField = 'P_U'
+      DataSource = Data_Src_qry_PU
       ReadOnly = True
       TabOrder = 6
     end
@@ -179,12 +179,10 @@
         Top = 19
         Width = 169
         Height = 21
-        DataField = 'Model'
-        DataSource = DataSource1
         Enabled = False
-        KeyField = 'Model'
-        ListField = 'Model'
-        ListSource = DataSource2
+        KeyField = 'MODEL_V'
+        ListField = 'MODEL_V'
+        ListSource = DataSource_test
         TabOrder = 0
       end
     end
@@ -196,13 +194,12 @@
       Caption = 'Qt : '
       TabOrder = 1
       object DBEdit5: TDBEdit
-        Left = 15
+        Left = 16
         Top = 19
-        Width = 176
+        Width = 173
         Height = 21
-        DataField = 'Qt'
-        DataSource = DataSource1
-        Enabled = False
+        DataField = 'QTE_V'
+        DataSource = UniDataSource1
         TabOrder = 0
       end
     end
@@ -251,12 +248,10 @@
         Top = 19
         Width = 169
         Height = 21
-        DataField = 'Famille'
-        DataSource = DataSource1
         Enabled = False
-        KeyField = 'Famille'
-        ListField = 'Famille'
-        ListSource = DataSource2
+        KeyField = 'FAMILLE_V'
+        ListField = 'FAMILLE_V'
+        ListSource = UniDataSource4
         TabOrder = 0
       end
     end
@@ -303,9 +298,9 @@
       object Button2: TButton
         Left = 272
         Top = 8
-        Width = 58
+        Width = 61
         Height = 25
-        Caption = 'Refresh'
+        Caption = 'Actualiser'
         TabOrder = 3
         OnClick = Button2Click
       end
@@ -355,12 +350,10 @@
       Top = 19
       Width = 169
       Height = 21
-      DataField = 'Client'
-      DataSource = DataSource1
       Enabled = False
-      KeyField = 'NomComplet'
-      ListField = 'NomComplet'
-      ListSource = DataSource3
+      KeyField = 'NOM_C'
+      ListField = 'NOM_C'
+      ListSource = UniDataSource3
       TabOrder = 0
     end
     object Button007: TButton
@@ -384,17 +377,17 @@
     Caption = 'Date de vente : '
     TabOrder = 3
     object DBEdit4: TDBEdit
-      Left = 12
-      Top = 18
-      Width = 180
+      Left = 11
+      Top = 19
+      Width = 186
       Height = 21
-      DataField = 'Date de vente'
-      DataSource = DataSource1
+      DataField = 'DATE_V'
+      DataSource = UniDataSource1
       TabOrder = 0
     end
     object DateTimePicker1: TDateTimePicker
       Left = 11
-      Top = 18
+      Top = 19
       Width = 186
       Height = 21
       Date = 44267.846394328700000000
@@ -405,16 +398,16 @@
   end
   object GroupBox8: TGroupBox
     Left = 8
-    Top = 271
+    Top = 272
     Width = 879
-    Height = 238
+    Height = 258
     TabOrder = 4
     object DBGrid1: TDBGrid
-      Left = 10
-      Top = 15
+      Left = 11
+      Top = 14
       Width = 859
-      Height = 210
-      DataSource = DataSource1
+      Height = 230
+      DataSource = UniDataSource1
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -423,168 +416,111 @@
       TitleFont.Style = []
       Columns = <
         item
+          Alignment = taCenter
           Expanded = False
-          FieldName = 'ID'
-          Width = 80
+          FieldName = 'ID_VENTE'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'ID_VEHICULE'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'ID_CLIENT'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'QTE_V'
+          Width = 100
+          Visible = True
+        end
+        item
+          Alignment = taRightJustify
+          Expanded = False
+          FieldName = 'DATE_V'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Model'
-          Width = 80
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Client'
-          Width = 80
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Date de vente'
-          Width = 80
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Qt'
-          Width = 80
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Famille'
-          Width = 80
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'PrixDeVente'
-          Width = 80
+          FieldName = 'PRIX_V'
+          Width = 100
           Visible = True
         end>
     end
   end
   object Button3: TButton
-    Left = 8
-    Top = 517
+    Left = 456
+    Top = 575
     Width = 33
     Height = 15
     Caption = '<-'
     TabOrder = 5
     OnClick = Button3Click
   end
-  object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Gs_app\Database1' +
-      '.mdb;Persist Security Info=False'
-    LoginPrompt = False
-    Mode = cmShareDenyNone
-    Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 52
-    Top = 526
+  object DBEdit_data_src_qry01: TDBEdit
+    Left = 34
+    Top = 736
+    Width = 89
+    Height = 21
+    DataField = 'ID_VEHICULE'
+    DataSource = UniData_src_qry01
+    TabOrder = 6
+    Visible = False
   end
-  object ADOTable1: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Ventes'
-    Left = 120
-    Top = 524
-    object ADOTable1ID: TAutoIncField
-      FieldName = 'ID'
-      ReadOnly = True
-    end
-    object ADOTable1Model: TWideStringField
-      FieldName = 'Model'
-      Size = 255
-    end
-    object ADOTable1Client: TWideStringField
-      FieldName = 'Client'
-      Size = 255
-    end
-    object ADOTable1PrixDeVente: TWideStringField
-      FieldName = 'PrixDeVente'
-      Size = 255
-    end
-    object ADOTable1Datedevente: TWideStringField
-      FieldName = 'Date de vente'
-      Size = 255
-    end
-    object ADOTable1Qt: TWideStringField
-      FieldName = 'Qt'
-      Size = 255
-    end
-    object ADOTable1Famille: TWideStringField
-      FieldName = 'Famille'
-      Size = 255
-    end
+  object DBEdit3: TDBEdit
+    Left = 34
+    Top = 709
+    Width = 89
+    Height = 21
+    DataField = 'ID_VEHICULE'
+    DataSource = UniDataSource1
+    TabOrder = 7
+    Visible = False
   end
-  object DataSource1: TDataSource
-    DataSet = ADOTable1
-    Left = 294
-    Top = 521
+  object DBEdit7: TDBEdit
+    Left = 276
+    Top = 701
+    Width = 108
+    Height = 21
+    DataField = 'ID_CLIENT'
+    DataSource = UniDataSource1
+    TabOrder = 8
+    Visible = False
   end
-  object ADOTable2: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Achats'
-    Left = 176
-    Top = 524
+  object DbEdit_Data_src_qry02: TDBEdit
+    Left = 276
+    Top = 728
+    Width = 108
+    Height = 21
+    DataField = 'ID_CLIENT'
+    DataSource = UniData_src_qry02
+    TabOrder = 9
+    Visible = False
   end
-  object ADOTable3: TADOTable
-    Active = True
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    TableName = 'Clients'
-    Left = 232
-    Top = 523
-    object ADOTable3ID: TAutoIncField
-      FieldName = 'ID'
-      ReadOnly = True
-    end
-    object ADOTable3Nom: TWideStringField
-      FieldName = 'Nom'
-      Size = 255
-    end
-    object ADOTable3Prénom: TWideStringField
-      FieldName = 'Pr'#233'nom'
-      Size = 255
-    end
-    object ADOTable3address: TWideStringField
-      FieldName = 'address'
-      Size = 255
-    end
-    object ADOTable3Télé: TIntegerField
-      FieldName = 'T'#233'l'#233
-    end
-    object ADOTable3Email: TWideStringField
-      FieldName = 'Email'
-      Size = 255
-    end
-    object ADOTable3NomComplet: TWideStringField
-      FieldName = 'NomComplet'
-      Size = 255
-    end
-  end
-  object DataSource2: TDataSource
-    DataSet = ADOTable2
-    Left = 358
-    Top = 520
-  end
-  object DataSource3: TDataSource
-    DataSet = ADOTable3
-    Left = 425
-    Top = 520
+  object Button9: TButton
+    Left = 10
+    Top = 537
+    Width = 34
+    Height = 17
+    Caption = '<--'
+    TabOrder = 10
+    OnClick = Button9Click
   end
   object ImageList1: TImageList
-    Left = 488
-    Top = 520
+    Left = 464
+    Top = 544
     Bitmap = {
-      494C010101000800680010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010008008C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000FEFEFE02FCFC
       FC08FAFAFA0EF7F7F716F5F5F51CF5F5F51CF5F5F51CF5F5F51CF9F9F90FFAFA
@@ -723,64 +659,20 @@
       E007000000000000F01F00000000000000000000000000000000000000000000
       000000000000}
   end
-  object DataSource4: TDataSource
-    DataSet = FDQuery1
-    Left = 744
-    Top = 400
-  end
-  object FDConnection1: TFDConnection
-    Params.Strings = (
-      'Database=C:\Gs_app\Database1.mdb'
-      'User_Name=yac'
-      'Password=root'
-      'ConnectionDef=Access_Demo')
-    Connected = True
-    Left = 608
-    Top = 520
-  end
-  object FDQuery1: TFDQuery
-    Active = True
-    CachedUpdates = True
-    Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT Qttacheter FROM Achats WHERE Model=:paramt01'
-      ''
-      '')
-    Left = 664
-    Top = 520
-    ParamData = <
-      item
-        Name = 'PARAMT01'
-        DataType = ftString
-        ParamType = ptInput
-        Value = Null
-      end>
+  object Data_Src_qry_qte_achats: TDataSource
+    DataSet = UniQuery_get_Qte_achats
+    Left = 672
+    Top = 408
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 768
-    Top = 456
+    Left = 848
+    Top = 576
   end
-  object FDQuery2: TFDQuery
-    Active = True
-    CachedUpdates = True
-    Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT PrixDeVente FROM Achats WHERE Model=:paramt02')
-    Left = 723
-    Top = 520
-    ParamData = <
-      item
-        Name = 'PARAMT02'
-        DataType = ftString
-        ParamType = ptInput
-        Value = Null
-      end>
-  end
-  object DataSource5: TDataSource
-    DataSet = FDQuery2
-    Left = 792
-    Top = 386
+  object Data_Src_qry_PU: TDataSource
+    DataSet = UniQuery_get_PU
+    Left = 808
+    Top = 410
   end
   object frxReport1: TfrxReport
     Version = '5.1.5'
@@ -791,18 +683,26 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44268.894642974500000000
-    ReportOptions.LastChange = 44268.932465543990000000
+    ReportOptions.LastChange = 44268.932465544000000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
     Left = 744
-    Top = 288
+    Top = 320
     Datasets = <
       item
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
+      end
+      item
+        DataSet = frxDBDataset2
+        DataSetName = 'frxDBDataset2'
+      end
+      item
+        DataSet = frxDBDataset3
+        DataSetName = 'frxDBDataset3'
       end>
     Variables = <>
     Style = <>
@@ -847,8 +747,8 @@
         Frame.Typ = [ftLeft]
       end
       object Shape2: TfrxShapeView
-        Left = 59.897650000000000000
-        Top = 344.100185720000000000
+        Left = 60.897650000000000000
+        Top = 343.320655720000000000
         Width = 604.964440480000000000
         Height = 186.516697620000000000
       end
@@ -1053,182 +953,131 @@
           'Facture')
         ParentFont = False
       end
-      object frxDBDataset1Client: TfrxMemoView
-        Left = 120.952380950000000000
-        Top = 198.095238090000000000
-        Width = 145.392084760000000000
+      object frxDBDataset2NOM_C: TfrxMemoView
+        Left = 124.724490000000000000
+        Top = 196.535560000000000000
+        Width = 75.590600000000000000
         Height = 18.897650000000000000
-        DataField = 'Client'
-        DataSet = frxDBDataset1
-        DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
+        DataField = 'NOM_C'
+        DataSet = frxDBDataset2
+        DataSetName = 'frxDBDataset2'
         Memo.UTF8W = (
-          '[frxDBDataset1."Client"]')
-        ParentFont = False
+          '[frxDBDataset2."NOM_C"]')
       end
-      object frxDBDataset1ID: TfrxMemoView
-        Left = 404.666666670000000000
-        Top = 197.190476190000000000
-        Width = 71.811070000000000000
+      object frxDBDataset2PRENOM_C: TfrxMemoView
+        Left = 207.874150000000000000
+        Top = 196.535560000000000000
+        Width = 83.149660000000000000
         Height = 18.897650000000000000
-        DataField = 'ID'
-        DataSet = frxDBDataset1
-        DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
+        DataField = 'PRENOM_C'
+        DataSet = frxDBDataset2
+        DataSetName = 'frxDBDataset2'
         Memo.UTF8W = (
-          '[frxDBDataset1."ID"]')
-        ParentFont = False
+          '[frxDBDataset2."PRENOM_C"]')
       end
-      object frxDBDataset1Datedevente: TfrxMemoView
-        Left = 540.952380950000000000
-        Top = 198.142857150000000000
-        Width = 113.963513330000000000
+      object frxDBDataset1ID_VENTE: TfrxMemoView
+        Left = 408.189240000000000000
+        Top = 196.535560000000000000
+        Width = 60.472480000000000000
         Height = 18.897650000000000000
-        DataField = 'Date de vente'
+        DataField = 'ID_VENTE'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
         Memo.UTF8W = (
-          '[frxDBDataset1."Date de vente"]')
-        ParentFont = False
+          '[frxDBDataset1."ID_VENTE"]')
       end
-      object frxDBDataset1Famille: TfrxMemoView
-        Left = 65.714285720000000000
-        Top = 403.809523810000000000
-        Width = 128.249227620000000000
+      object frxDBDataset1DATE_V: TfrxMemoView
+        Left = 544.252320000000000000
+        Top = 196.535560000000000000
+        Width = 113.385900000000000000
         Height = 18.897650000000000000
-        DataField = 'Famille'
+        DataField = 'DATE_V'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
         Memo.UTF8W = (
-          '[frxDBDataset1."Famille"]')
-        ParentFont = False
+          '[frxDBDataset1."DATE_V"]')
       end
-      object frxDBDataset1Model: TfrxMemoView
-        Left = 216.095238090000000000
-        Top = 403.761904760000000000
-        Width = 99.677799050000000000
+      object frxDBDataset3FAMILLE_V: TfrxMemoView
+        Left = 71.811070000000000000
+        Top = 404.409710000000000000
+        Width = 128.504020000000000000
         Height = 18.897650000000000000
-        DataField = 'Model'
-        DataSet = frxDBDataset1
-        DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
+        DataField = 'FAMILLE_V'
+        DataSet = frxDBDataset3
+        DataSetName = 'frxDBDataset3'
         Memo.UTF8W = (
-          '[frxDBDataset1."Model"]')
-        ParentFont = False
+          '[frxDBDataset3."FAMILLE_V"]')
       end
-      object frxDBDataset1Qt: TfrxMemoView
-        Left = 328.571428570000000000
-        Top = 402.857142860000000000
-        Width = 99.677799050000000000
+      object frxDBDataset3MODEL_V: TfrxMemoView
+        Left = 219.212740000000000000
+        Top = 404.409710000000000000
+        Width = 86.929190000000000000
         Height = 18.897650000000000000
-        DataField = 'Qt'
-        DataSet = frxDBDataset1
-        DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
+        DataField = 'MODEL_V'
+        DataSet = frxDBDataset3
+        DataSetName = 'frxDBDataset3'
         Memo.UTF8W = (
-          '[frxDBDataset1."Qt"]')
-        ParentFont = False
+          '[frxDBDataset3."MODEL_V"]')
       end
-      object frxDBDataset1PrixDeVente: TfrxMemoView
-        Left = 444.619047610000000000
-        Top = 402.761904760000000000
-        Width = 94.008349050000000000
+      object frxDBDataset1QTE_V: TfrxMemoView
+        Left = 340.157700000000000000
+        Top = 404.409710000000000000
+        Width = 79.370130000000000000
         Height = 18.897650000000000000
-        DataField = 'PrixDeVente'
+        DataField = 'QTE_V'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
         Memo.UTF8W = (
-          '[frxDBDataset1."PrixDeVente"]')
-        ParentFont = False
+          '[frxDBDataset1."QTE_V"]')
+      end
+      object frxDBDataset3P_U: TfrxMemoView
+        Left = 449.764070000000000000
+        Top = 404.409710000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        DataField = 'P_U'
+        DataSet = frxDBDataset3
+        DataSetName = 'frxDBDataset3'
+        Memo.UTF8W = (
+          '[frxDBDataset3."P_U"]')
+      end
+      object frxDBDataset1PRIX_V: TfrxMemoView
+        Left = 555.590910000000000000
+        Top = 404.409710000000000000
+        Width = 98.267780000000000000
+        Height = 18.897650000000000000
+        DataField = 'PRIX_V'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Memo.UTF8W = (
+          '[frxDBDataset1."PRIX_V"]')
       end
       object Memo12: TfrxMemoView
-        Left = 557.190476190000000000
-        Top = 402.857142860000000000
-        Width = 94.008349050000000000
+        Left = 442.205010000000000000
+        Top = 578.268090000000000000
+        Width = 177.637910000000000000
         Height = 18.897650000000000000
-        DataField = 'PrixDeVente'
+        DataField = 'PRIX_V'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
         Memo.UTF8W = (
-          '[frxDBDataset1."PrixDeVente"]')
-        ParentFont = False
-      end
-      object Memo13: TfrxMemoView
-        Left = 448.047619050000000000
-        Top = 579.095238100000000000
-        Width = 164.484539520000000000
-        Height = 18.897650000000000000
-        DataField = 'PrixDeVente'
-        DataSet = frxDBDataset1
-        DataSetName = 'frxDBDataset1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        Memo.UTF8W = (
-          '[frxDBDataset1."PrixDeVente"]')
-        ParentFont = False
+          '[frxDBDataset1."PRIX_V"]')
       end
     end
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
-    FieldAliases.Strings = (
-      'ID=ID'
-      'Model=Model'
-      'Client=Client'
-      'PrixDeVente=PrixDeVente'
-      'Date de vente=Date de vente'
-      'Qt=Qt'
-      'Famille=Famille')
-    DataSource = DataSource1
+    DataSource = UniDataSource1
     BCDToCurrency = False
     Left = 816
-    Top = 288
+    Top = 312
   end
   object ImageList2: TImageList
-    Left = 544
-    Top = 520
+    Left = 520
+    Top = 544
     Bitmap = {
-      494C010102000C00500010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000C00740010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1366,5 +1215,184 @@
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
+  end
+  object UniTable1: TUniTable
+    TableName = 'VENTES'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 40
+    Top = 544
+    object UniTable1ID_VENTE: TFloatField
+      FieldName = 'ID_VENTE'
+      Required = True
+    end
+    object UniTable1ID_VEHICULE: TFloatField
+      FieldName = 'ID_VEHICULE'
+      Required = True
+    end
+    object UniTable1ID_CLIENT: TFloatField
+      FieldName = 'ID_CLIENT'
+      Required = True
+    end
+    object UniTable1QTE_V: TFloatField
+      FieldName = 'QTE_V'
+    end
+    object UniTable1DATE_V: TStringField
+      FieldName = 'DATE_V'
+    end
+    object UniTable1PRIX_V: TFloatField
+      FieldName = 'PRIX_V'
+    end
+  end
+  object UniTable2: TUniTable
+    TableName = 'ACHATS'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 96
+    Top = 544
+  end
+  object UniTable3: TUniTable
+    TableName = 'CLIENTS'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 152
+    Top = 544
+  end
+  object UniDataSource1: TUniDataSource
+    DataSet = UniTable1
+    Left = 224
+    Top = 544
+  end
+  object UniDataSource2: TUniDataSource
+    DataSet = UniTable2
+    Left = 304
+    Top = 544
+  end
+  object UniDataSource3: TUniDataSource
+    DataSet = UniTable3
+    Left = 384
+    Top = 544
+  end
+  object UniTable4: TUniTable
+    TableName = 'VEHICULE'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 40
+    Top = 593
+  end
+  object UniDataSource4: TUniDataSource
+    DataSet = UniTable4
+    Left = 382
+    Top = 593
+  end
+  object DataSource_test: TDataSource
+    DataSet = UniTable_test
+    Left = 220
+    Top = 593
+  end
+  object UniTable_test: TUniTable
+    TableName = 'VEHICULE'
+    Connection = Article.UniConnection1
+    Active = True
+    Left = 136
+    Top = 593
+  end
+  object UniQuery1_get_id_veh: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT ID_VEHICULE FROM VEHICULE WHERE Model_v = :parm_01')
+    Left = 56
+    Top = 648
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'parm_01'
+        Value = Null
+      end>
+  end
+  object UniData_src_qry01: TUniDataSource
+    DataSet = UniQuery1_get_id_veh
+    Left = 168
+    Top = 648
+  end
+  object UniQuery_get_Qte_achats: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT QTE_A FROM ACHATS WHERE '
+      
+        'ID_VEHICULE in(select ID_VEHICULE from VEHICULE where Model_v =:' +
+        'parm_03 ) ')
+    Active = True
+    Left = 632
+    Top = 544
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'parm_03'
+        Value = Null
+      end>
+  end
+  object UniQuery_get_PU: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT P_U FROM VEHICULE WHERE Model_v =:parm_04')
+    Active = True
+    Left = 752
+    Top = 544
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'parm_04'
+        Value = Null
+      end>
+  end
+  object frxDBDataset2: TfrxDBDataset
+    UserName = 'frxDBDataset2'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'ID_CLIENT=ID_CLIENT'
+      'NOM_C=NOM_C'
+      'PRENOM_C=PRENOM_C'
+      'ADRESS_C=ADRESS_C'
+      'TELE_C=TELE_C'
+      'EMAIL_C=EMAIL_C')
+    DataSource = UniDataSource3
+    BCDToCurrency = False
+    Left = 808
+    Top = 359
+  end
+  object frxDBDataset3: TfrxDBDataset
+    UserName = 'frxDBDataset3'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'ID_VEHICULE=ID_VEHICULE'
+      'FAMILLE_V=FAMILLE_V'
+      'MODEL_V=MODEL_V'
+      'CATEGORIE_V=CATEGORIE_V'
+      'TYPE_V=TYPE_V'
+      'COULEUR_V=COULEUR_V'
+      'P_U=P_U')
+    DataSource = UniDataSource4
+    BCDToCurrency = False
+    Left = 728
+    Top = 367
+  end
+  object UniQuery2_get_id_clt: TUniQuery
+    Connection = Article.UniConnection1
+    SQL.Strings = (
+      'SELECT ID_CLIENT FROM CLIENTS WHERE Nom_c = :parm_02')
+    Left = 275
+    Top = 651
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'parm_02'
+        Value = Null
+      end>
+  end
+  object UniData_src_qry02: TUniDataSource
+    DataSet = UniQuery2_get_id_clt
+    Left = 387
+    Top = 651
   end
 end
